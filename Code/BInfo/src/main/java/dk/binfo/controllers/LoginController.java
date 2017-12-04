@@ -63,7 +63,7 @@ public class LoginController {
 		if (bindingResult.hasErrors()) {
 			modelAndView.setViewName("registration");
 		} else {
-			userService.saveUser(user);
+			userService.register(user);
 			modelAndView.addObject("successMessage", "SUCCES!: Du har tilføjet en ny bruger.");
 			modelAndView.addObject("user", new User());
 			modelAndView.setViewName("registration");
@@ -108,7 +108,4 @@ public class LoginController {
 		userService.updateUserSettings(userinfo);
 		return modelAndView;
 	}
-
-	//TODO fuldføre submit
-	
 }

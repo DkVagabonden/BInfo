@@ -48,10 +48,6 @@ public class ApartmentController {
         ModelAndView modelAndView = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
-       /* Apartment apartmentExists = apartmentService.findApartmentByNumber(apartment.getNumber());
-        if (apartmentExists != null) {
-            bindingResult.rejectValue("number", "error.apartment", "Der findes allerede en lejlighed med det nummer du har angivet");
-        } */
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("/apartment/add");
         } else {
@@ -95,8 +91,6 @@ public class ApartmentController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject("user", user);
-       // modelAndView.addObject("apartment", new Apartment()); //TODO JEG HAR INGEN IDE PATRICK
-
         if (bindingResult.hasErrors())
         {
             modelAndView.setViewName("/apartment/edit");
@@ -110,7 +104,7 @@ public class ApartmentController {
     @RequestMapping(value="/apartment/delete/{id}", method=RequestMethod.GET)
     public ModelAndView deleteApartment(@PathVariable Integer id) {
         ModelAndView modelAndView = new ModelAndView("redirect:/apartment");
-        Apartment apartment = apartmentService.delete(id);
+        apartmentService.delete(id);
         return modelAndView;
     }
 }

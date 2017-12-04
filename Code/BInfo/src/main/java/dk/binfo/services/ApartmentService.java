@@ -8,7 +8,7 @@ public interface ApartmentService {
     Apartment findApartmentByNumber(String number);
 
     Apartment delete(int id);
-    List<Apartment> findAll(); // DDENNE KASDKASDAS DA TESTES.
+    List<Apartment> findAll();
     Apartment update(Apartment apartment);
     Apartment findById(int id);
 
