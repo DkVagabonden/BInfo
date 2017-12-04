@@ -40,6 +40,9 @@ public class LoginController {
 	@RequestMapping(value = {"/accessDenied"}, method = RequestMethod.GET)
 	public ModelAndView accessDenied() {
 		ModelAndView modelAndView = new ModelAndView();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		User user = userService.findUserByEmail(auth.getName());
+		modelAndView.addObject("user", user);
 		modelAndView.setViewName("/accessDenied");
 		return modelAndView;
 	}
