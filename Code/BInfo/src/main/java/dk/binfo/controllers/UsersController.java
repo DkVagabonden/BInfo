@@ -41,7 +41,7 @@ public class UsersController {
             bindingResult.rejectValue("email", "error.user", "Der eksisterer allerede en bruger med den angivne email");
         }
         else {
-            userService.adminSaveUser(users);
+            userService.adminRegisterUser(users);
             modelAndView.addObject("successMessage", "SUCCES!: Du har tilføjet en ny bruger.");
             modelAndView.addObject("users", new User());
             modelAndView.setViewName("/users/add");
