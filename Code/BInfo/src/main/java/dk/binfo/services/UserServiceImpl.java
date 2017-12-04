@@ -94,8 +94,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		User user = userRepository.findByEmail(userName);
 		List<GrantedAuthority> authorities = getUserAuthority(user.getRoles());
 		return buildUserForAuthentication(user, authorities);
-
-		executeupdate
 	}
 
 	private List<GrantedAuthority> getUserAuthority(Set<Role> userRoles) {
