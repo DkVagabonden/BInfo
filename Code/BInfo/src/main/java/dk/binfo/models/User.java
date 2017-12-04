@@ -52,6 +52,17 @@ public class User {
 	@Column(name ="phone_number")
 	private String phoneNumber;
 
+	public String getMyApartment() {
+		return myApartment;
+	}
+
+	public void setMyApartment(String myApartment) {
+		this.myApartment = myApartment;
+	}
+
+	@Column(name = "my_apartment")
+	private String myApartment;
+
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
