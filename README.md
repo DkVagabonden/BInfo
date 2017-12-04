@@ -1,6 +1,8 @@
 Introduction - SCHOOL PROJECT
 ============
-**BoligInfo** -- is a fully responsive Arpartment template. Based on **[Bootstrap 3](https://github.com/twbs/bootstrap)** framework. Made with MVC. Fits many screen resolutions from small mobile devices to large desktops. 
+**BoligInfo** -- is a fully responsive Arpartment template. Based on **[Bootstrap 3](https://github.com/twbs/bootstrap)** framework. Made with MVC. Fits many screen resolutions from small mobile devices to large desktops.  
+
+**[JAVADOCS](https://boliginfo.github.io/BInfo/)**
 
 ## Getting Started
 
