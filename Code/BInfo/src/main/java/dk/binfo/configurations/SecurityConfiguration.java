@@ -59,9 +59,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				// TODO Sende mail til en bruger hvis de ikke har betalt 1 måned forud. - STEEN
 				// TODO Generere en venteliste til PDF til admin  - JENS
 				// TODO admin skal kunne oprette en ny bruger/se alle brugere og søge/edit (/admin/user/ + HTML)
+				// TODO konfigurer databasen med alle lister
+				// TODO test lister funktion
 				// TODO lav user bruger indstillinger side (/user/settings Controller + HTML) - MORTEN - DONE
 				// TODO lav admin bruger indstillinger (/admin/settings Controller + html) - MORTEN - DONE
 				// TODO Lav javadoc på alle classer, methoder og atributer
+				// TODO lav admin bruger indstillinger (/admin/settings Controller + html) - MORTEN - DONE
+				// TODO Lav javadoc på alle classer, methoder og
+				// attributer
 				.antMatchers("/user/**").hasAuthority("user") //TODO lav en user adminHome side (Controller, html)
 				.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
 				.authenticated().and().csrf().disable().formLogin()
