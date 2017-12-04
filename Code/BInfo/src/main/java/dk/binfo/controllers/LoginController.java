@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -66,7 +65,7 @@ public class LoginController {
 		if (bindingResult.hasErrors()) {
 			modelAndView.setViewName("registration");
 		} else {
-			userService.saveUser(user);
+			userService.register(user);
 			modelAndView.addObject("successMessage", "SUCCES!: Du har tilføjet en ny bruger.");
 			modelAndView.addObject("user", new User());
 			modelAndView.setViewName("registration");
@@ -134,7 +133,7 @@ public class LoginController {
 			bindingResult.rejectValue("email", "error.user", "Der eksisterer allerede en bruger med den angivne email");
 		}
 		else {
-			userService.adminSaveUser(users);
+			userService.adminRegisterUser(users);
 			modelAndView.addObject("successMessage", "SUCCES!: Du har tilføjet en ny bruger.");
 			modelAndView.addObject("users", new User());
 			modelAndView.setViewName("/users/add");
@@ -152,9 +151,5 @@ public class LoginController {
 		modelAndView.setViewName("/users");
 		return modelAndView;
 	}
-
-	//TODO fuldføre submit
-
-
 	
 }

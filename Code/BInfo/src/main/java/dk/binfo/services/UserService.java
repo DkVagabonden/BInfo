@@ -8,6 +8,6 @@ public interface UserService {
 	User findUserByEmail(String email);
 	User updateUserSettings(User user);
 	List<User> findAll();
-	void saveUser(User user);
-	void adminSaveUser(User user);
+	void register(User user);
+	void adminRegisterUser(User user);
 }

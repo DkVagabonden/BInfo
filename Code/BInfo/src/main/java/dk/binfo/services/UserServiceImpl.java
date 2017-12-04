@@ -40,9 +40,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 
 	@Override
-	public void saveUser(User user) {
+	public void register(User user) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-		user.setActive(false);
+		user.setActive(true);
 		user.setPhoneNumber(user.getPhoneNumber());
 		Role userRole = roleRepository.findByRole("user");
 		user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 
 	@Override
-	public void adminSaveUser(User user) {
+	public void adminRegisterUser(User user) {
 		Random ran = new Random();
 		String Password = generateString(ran,"qwertyuiopasdfghjklzxcvbnm",8);
 		System.out.println(Password);
@@ -67,15 +67,23 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	@Transactional
 	public User updateUserSettings(User user){
 		User updateUser = userRepository.findByEmail(user.getEmail());
-		if(!user.getPhoneNumber().equalsIgnoreCase("") && user.getPhoneNumber() != null)
+		System.out.println(user.getPassword());
+		System.out.println(user.getPhoneNumber());
+		if(user.getPassword().equalsIgnoreCase("") && user.getPhoneNumber() != null)
 		{
 			System.out.println(user.getPhoneNumber()); //TODO fjern
 			updateUser.setPhoneNumber(user.getPhoneNumber());
 		}
-		if(!user.getPassword().equalsIgnoreCase("") && user.getPassword() !=null)
-		{
+		if(user.getPhoneNumber() == null || user.getPhoneNumber().equalsIgnoreCase("") && user.getPassword() != null) {
 			System.out.println(user.getPassword()); //TODO fjern
 			updateUser.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+		}
+		if(user.getPhoneNumber() != null && user.getPassword() != null) {
+
+			System.out.println(user.getPassword()); //TODO fjern
+			System.out.println(user.getPhoneNumber()); //TODO fjern
+			updateUser.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+			updateUser.setPhoneNumber(user.getPhoneNumber());
 		}
 		return updateUser;
 	}
@@ -86,6 +94,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		User user = userRepository.findByEmail(userName);
 		List<GrantedAuthority> authorities = getUserAuthority(user.getRoles());
 		return buildUserForAuthentication(user, authorities);
+
+		executeupdate
 	}
 
 	private List<GrantedAuthority> getUserAuthority(Set<Role> userRoles) {
