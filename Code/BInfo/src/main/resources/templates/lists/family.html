@@ -16,7 +16,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                INTERN LISTE
+                FAMILIELISTE
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -59,23 +59,14 @@
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
                                         <!-- Lav form med brugerinput LEJLIGHEDSNUMMER -->
-                                        <li>
-                                            Indtast lejlighed:
-                                        </li>
-                                        <li>
-                                            <form
-                                                    th:action="@{'/lists/apartment/' + ${id}}"
-                                                    method="post">
-                                                <input type="number" class="form-control"
-                                                       name="id" id="id" th:placeholder="lejlighedsnr.">
-                                            </form>
-                                        </li>
+                                        <!-- Lav form med brugerinput ANTAL PERSONER -->
                                         <!-- Lav button til generering af liste -->
-                                        <li>
-                                            <a th:href="@{'/lists/apartment/' + ${id}}"
-                                               class="btn btn-success btn-block">Se
-                                                Liste</a>
+                                        <li><a th:href="@{'users/edit/' + ${user.email}}">Rediger</a></li>
+                                        <li><a th:href="@{'users/delete/' + ${user.email}}" onclick="return confirm('Er du sikker?')">Slet</a></li>
                                         </li>
+                                        <li><a href="http://lmgtfy.com/?q=jeg+har+ingen+ide">Jeg har ingen ide</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="https://www.youtube.com/watch?v=8gyLR4NfMiI">Look at me now</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -101,7 +92,8 @@
                                     <td th:text="${listuser.name}">Fornavn</td>
                                     <td th:text="${listuser.lastName}">Efternavn</td>
                                     <td th:text="${listuser.phoneNumber}">Telefonnummer</td>
-                                    <td th:text="${listuser.myApartment}">Brugers Lejlighed</td>
+                                    <td th:text="${listuser.myApartment}">Brugers
+                                    Lejlighed</td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
@@ -147,4 +139,3 @@
 </div>
 </body>
 </html>
-

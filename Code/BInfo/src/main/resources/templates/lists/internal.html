@@ -11,14 +11,12 @@
     <!-- Main Header -->
     <header th:replace="layout :: site-header" />
     <aside th:replace="layout :: site-aside" />
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Lister
-                <small>Overblik</small>
+                INTERN LISTE
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -33,40 +31,56 @@
                     <div class="box box-primary">
                         <!-- Tilpas de nedenstående boxes størrelse, inline -->
                         <!-- OBS. Hver af de fire første knapper skal angive en prioritet 1, 2, 3 eller 4 som vi
-                        kan sende til bage til controlleren for at bestemme hvilken arraylist som brugerne
+                        kan sende tilbage til controlleren for at bestemme hvilken arraylist som brugerne
                         læses fra-->
-                        <div class="small-box">
-                            <a href="list/connect" class="btn btn-success" role="button">Sammenlægningsliste</a>
-                        </div>
-                        <div class="small-box">
-                            <a href="list/intern" class="btn btn-success" role="button">Intern
-                                Liste</a>
-                        </div>
-                        <div class="small-box">
-                            <a href="list/family" class="btn btn-success" role="button">Familieliste
-                            </a>
-                        </div>
-                        <div class="small-box">
-                            <a href="list/external" class="btn btn-success" role="button">Ekstern
-                                Liste</a>
-                        </div>
-                        <div class="small-box">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-success">Liste for én lejlighed</button>
-                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                                    <span class="caret"></span>
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <!-- Lav form med brugerinput LEJLIGHEDSNUMMER -->
-                                    <li> <form></form> </li>
-                                    <!-- Lav form med brugerinput ANTAL PERSONER -->
-                                    <li> <form></form> </li>
-                                    <!-- Lav button til generering af liste -->
-                                    <li> <button></button> </li>
-                                </ul>
+                        <div class = "box-header">
+                            <div class="col-sm-2">
+                                <a href="/lists/connect" class="btn btn-success btn-block"
+                                   role="button">
+                                    Sammenlægning</a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="/lists/internal" class="btn btn-success btn-block" role="button">Intern</a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="/lists/family" class="btn btn-success btn-block"
+                                   role="button">Familie</a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="/lists/external" class="btn btn-success btn-block" role="button">Ekstern</a>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="btn-group">
+                                    <button type="button"
+                                            class="btn btn-success btn-block dropdown-toggle"
+                                            data-toggle="dropdown">Én lejlighed
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <!-- Lav form med brugerinput LEJLIGHEDSNUMMER -->
+                                        <li>
+                                            Indtast lejlighed:
+                                        </li>
+                                        <li>
+                                            <form
+                                                    th:action="@{'/lists/apartment/' + ${id}}"
+                                                    method="post">
+                                                <input type="number" class="form-control"
+                                                       name="id" id="id" th:placeholder="lejlighedsnr.">
+                                            </form>
+                                        </li>
+                                        <!-- Lav button til generering af liste -->
+                                        <li>
+                                            <a th:href="@{'/lists/apartment/' + ${id}}"
+                                               class="btn btn-success btn-block">Se
+                                                Liste</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
+
                         <!-- /.box-header -->
                         <div class="box-body">
                             <table id="example1" class="table table-bordered table-striped">
@@ -81,14 +95,13 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:each="user, status : ${user}">
+                                <tr th:each="listuser, status : ${list}">
                                     <td th:text="${status.count}">1</td>
-                                    <td th:text="${user.email}">Email</td>
-                                    <td th:text="${user.name}">Fornavn</td>
-                                    <td th:text="${user.lastName}">Efternavn</td>
-                                    <td th:text="${user.phoneNumber}">Telefonnummer</td>
-                                    <!-- <td th:text="${user.my_apartment}">Brugers
-                                    Lejlighed</td> -->
+                                    <td th:text="${listuser.email}">Email</td>
+                                    <td th:text="${listuser.name}">Fornavn</td>
+                                    <td th:text="${listuser.lastName}">Efternavn</td>
+                                    <td th:text="${listuser.phoneNumber}">Telefonnummer</td>
+                                    <td th:text="${listuser.myApartment}">Brugers Lejlighed</td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
@@ -115,7 +128,8 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
+    <!-- Main Footer -->
+    <footer th:replace="layout :: site-footer" />
     <!-- page script -->
     <script>
         $(function () {
@@ -130,8 +144,7 @@
             })
         })
     </script>
-    <!-- Main Footer -->
-    <footer th:replace="layout :: site-footer" />
 </div>
 </body>
 </html>
+
