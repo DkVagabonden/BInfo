@@ -59,14 +59,23 @@
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
                                         <!-- Lav form med brugerinput LEJLIGHEDSNUMMER -->
-                                        <!-- Lav form med brugerinput ANTAL PERSONER -->
-                                        <!-- Lav button til generering af liste -->
-                                        <li><a th:href="@{'users/edit/' + ${user.email}}">Rediger</a></li>
-                                        <li><a th:href="@{'users/delete/' + ${user.email}}" onclick="return confirm('Er du sikker?')">Slet</a></li>
+                                        <li>
+                                            Indtast lejlighed:
                                         </li>
-                                        <li><a href="http://lmgtfy.com/?q=jeg+har+ingen+ide">Jeg har ingen ide</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="https://www.youtube.com/watch?v=8gyLR4NfMiI">Look at me now</a></li>
+                                        <li>
+                                            <form
+                                                    th:action="@{'/lists/apartment/' + ${id}}"
+                                                    method="post">
+                                                <input type="number" class="form-control"
+                                                       name="id" id="id" th:placeholder="lejlighedsnr.">
+                                            </form>
+                                        </li>
+                                        <!-- Lav button til generering af liste -->
+                                        <li>
+                                            <a th:href="@{'/lists/apartment/' + ${id}}"
+                                               class="btn btn-success btn-block">Se
+                                                Liste</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

@@ -64,17 +64,14 @@
                                         </li>
                                         <li>
                                             <form
-                                                    th:action="@{'/lists/apartment/' + ${id}}"
-                                                    method="post">
+                                                    th:value="${id}" th:field="${id}"
+                                                    method="get">
                                                 <input type="number" class="form-control"
-                                                       name="id" id="id" th:placeholder="lejlighedsnr.">
+                                                       th:name="id" th:placeholder="lejlighedsnr.">
+                                                <a th:href="@{'/lists/apartment/' + ${id}}"
+                                                        class="btn btn-success btn-block">Se Liste</a>
+
                                             </form>
-                                        </li>
-                                        <!-- Lav button til generering af liste -->
-                                        <li>
-                                            <a th:href="@{'/lists/apartment/' + ${id}}"
-                                               class="btn btn-success btn-block">Se
-                                                Liste</a>
                                         </li>
                                     </ul>
                                 </div>
