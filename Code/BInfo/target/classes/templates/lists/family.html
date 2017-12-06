@@ -64,7 +64,7 @@
                                         </li>
                                         <li>
                                             <form
-                                                    th:action="@{'/lists/apartment/' + ${id}}"
+                                                    th:action="@{'/lists/listapartment/' + ${id}}"
                                                     method="post">
                                                 <input type="number" class="form-control"
                                                        name="id" id="id" th:placeholder="lejlighedsnr.">
@@ -72,7 +72,7 @@
                                         </li>
                                         <!-- Lav button til generering af liste -->
                                         <li>
-                                            <a th:href="@{'/lists/apartment/' + ${id}}"
+                                            <a th:href="@{'/lists/listapartment/' + ${id}}"
                                                class="btn btn-success btn-block">Se
                                                 Liste</a>
                                         </li>

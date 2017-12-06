@@ -7,13 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 
 
 @Controller
@@ -72,14 +70,15 @@ public class ListController {
     }
 
     @RequestMapping(value={"/lists/listapartment/{id}"}, method = RequestMethod.GET)
-    public ModelAndView showSingleApartmentList(@RequestParam("id") Integer id) {
+    public ModelAndView showSingleApartmentList(@RequestParam("apartment.id") Integer id) {
         ModelAndView modelAndView = new ModelAndView("/lists/listapartment/{id}", "list",
-                listService.generateSingleApartmentList(Integer.MAX_VALUE, 33));
+                listService.generateSingleApartmentList(Integer.MAX_VALUE, id));
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject(user);
         modelAndView.addObject("adminMessage","Du er logget ind som spadmin");
+        modelAndView.setViewName("/lists/listapartment/{id}");
         return modelAndView;
     }
-
+    
 }
