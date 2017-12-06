@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `role` (
 
 -- Dumping data for table project.role: ~0 rows (approximately)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` (`role_id`, `role`) VALUES
+INSERT INTO role (`role_id`, `role`) VALUES
 	(1, 'ADMIN');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 

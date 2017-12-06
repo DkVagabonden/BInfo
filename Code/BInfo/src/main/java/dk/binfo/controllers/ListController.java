@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -70,7 +71,7 @@ public class ListController {
     }
 
     @RequestMapping(value={"/lists/listapartment/{id}"}, method = RequestMethod.GET)
-    public ModelAndView showSingleApartmentList(@RequestParam("apartment.id") Integer id) {
+    public ModelAndView showSingleApartmentList(@PathVariable Integer id) {
         ModelAndView modelAndView = new ModelAndView("/lists/listapartment/{id}", "list",
                 listService.generateSingleApartmentList(Integer.MAX_VALUE, id));
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -80,5 +81,5 @@ public class ListController {
         modelAndView.setViewName("/lists/listapartment/{id}");
         return modelAndView;
     }
-    
+
 }
