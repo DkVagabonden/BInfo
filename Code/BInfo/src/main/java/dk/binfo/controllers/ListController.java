@@ -71,9 +71,9 @@ public class ListController {
         return modelAndView;
     }
 
-    @RequestMapping(value={"/lists/apartment/{id}"}, method = RequestMethod.GET)
+    @RequestMapping(value={"/lists/listapartment/{id}"}, method = RequestMethod.GET)
     public ModelAndView showSingleApartmentList(@RequestParam("id") Integer id) {
-        ModelAndView modelAndView = new ModelAndView("/lists/apartment/{id}", "list",
+        ModelAndView modelAndView = new ModelAndView("/lists/listapartment/{id}", "list",
                 listService.generateSingleApartmentList(Integer.MAX_VALUE, 33));
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
