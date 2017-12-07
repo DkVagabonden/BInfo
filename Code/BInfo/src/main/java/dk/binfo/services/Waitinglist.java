@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -58,6 +59,9 @@ public class Waitinglist {
 	 * @author 		Stonie
 	 */
 	public ArrayList<String> getWaitinglist(int length,int ApartmentId){
+		if(getPreferences(length,ApartmentId)==null){
+			return null;
+		}
 		return checkPriority(length,getPreferences(length,ApartmentId),ApartmentId);
 	}
 
@@ -87,6 +91,9 @@ public class Waitinglist {
 			e.printStackTrace();
 		}
 		ArrayList<String> emailsunsorted = new ArrayList<String>();
+		if (neighboursID.isEmpty()){
+			return emailsunsorted;
+		}
 		for (int neighbourID : neighboursID){
 			try {
 				PreparedStatement sql = jdbcTemplate.getDataSource().getConnection().prepareStatement("SELECT email FROM `user` WHERE my_apartment=?;");
@@ -102,18 +109,20 @@ public class Waitinglist {
 				e.printStackTrace();
 			}
 		}
-
+		if (emailsunsorted.isEmpty()){
+			return emailsunsorted;
+		}
 		ArrayList<String> emailssorted = new ArrayList<String>();
 			try {
 				String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=?";
-				for (int i = 1;i>=emailsunsorted.size();i++){
+				for (int i = 1;i<emailsunsorted.size();i++){
 					SQLString += " OR email=?";
 				}
 				String SQLEND = " AND list_priority=1 ORDER BY seniority ASC;";
 				SQLString += SQLEND;
 				PreparedStatement sql = jdbcTemplate.getDataSource().getConnection().prepareStatement(SQLString);
-				for (int i = 1;i>=emailsunsorted.size();i++){
-					sql.setString(i, emailsunsorted.get(i-1));
+				for (int i = 0;i<emailsunsorted.size();i++){
+					sql.setString(i+1, emailsunsorted.get(i));
 				}
 				ResultSet result = sql.executeQuery();
 				while (result.next()){
@@ -190,14 +199,14 @@ public class Waitinglist {
 				ArrayList<String> emailssorted = getNeighbourEmails(ApartmentId);
 				try {
 					String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=?";
-					for (int i = 1;i>=emails.size();i++){
+					for (int i = 1;i<emails.size();i++){
 						SQLString += " OR email=?";
 					}
 					String SQLEND = " AND list_priority=2 ORDER BY seniority ASC;";
 					SQLString += SQLEND;
 					PreparedStatement sql = jdbcTemplate.getDataSource().getConnection().prepareStatement(SQLString);
-					for (int i = 1;i>=emails.size();i++){
-						sql.setString(i, emails.get(i-1));
+					for (int i = 0;i<emails.size();i++){
+						sql.setString((i+1), emails.get(i));
 					}
 					ResultSet result = sql.executeQuery();
 					while (result.next()){
@@ -211,14 +220,14 @@ public class Waitinglist {
 				}
 		try {
 			String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=?";
-			for (int i = 1;i>=emails.size();i++){
+			for (int i = 1;i<emails.size();i++){
 				SQLString += " OR email=?";
 			}
 			String SQLEND = " AND list_priority=3 ORDER BY seniority ASC;";
 			SQLString += SQLEND;
 			PreparedStatement sql = jdbcTemplate.getDataSource().getConnection().prepareStatement(SQLString);
-			for (int i = 1;i>=emails.size();i++){
-				sql.setString(i, emails.get(i-1));
+			for (int i = 0;i<emails.size();i++){
+				sql.setString((i+1), emails.get(i));
 			}
 			ResultSet result = sql.executeQuery();
 			while (result.next()){
@@ -232,14 +241,14 @@ public class Waitinglist {
 		}
 		try {
 			String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=?";
-			for (int i = 1;i>=emails.size();i++){
+			for (int i = 1;i<emails.size();i++){
 				SQLString += " OR email=?";
 			}
 			String SQLEND = " AND list_priority=4 ORDER BY seniority ASC;";
 			SQLString += SQLEND;
 			PreparedStatement sql = jdbcTemplate.getDataSource().getConnection().prepareStatement(SQLString);
-			for (int i = 1;i>=emails.size();i++){
-				sql.setString(i, emails.get(i-1));
+			for (int i = 0;i<emails.size();i++){
+				sql.setString((i+1), emails.get(i));
 			}
 			ResultSet result = sql.executeQuery();
 			while (result.next()){
@@ -252,7 +261,9 @@ public class Waitinglist {
 			e.printStackTrace();
 		}
 		int size = emailssorted.size();
-		emailssorted.subList(length, size).clear();
+		if (length<size){
+			emailssorted.subList(length, size).clear();
+		}
 		return emailssorted;
 	}
 

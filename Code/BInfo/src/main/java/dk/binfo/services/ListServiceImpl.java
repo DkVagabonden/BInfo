@@ -43,7 +43,7 @@ public class ListServiceImpl implements ListService {
     private Waitinglist waitinglist;
 
     // kun til at teste med. Det skal vises i browserfane i den slutgiltige version
-    private String filePath = "/Users/jensbackvall/Desktop/KEAsem2/BInfo/PDF_TEST/BINFO_TEST.pdf";
+    private String filePath = "/Users/jensbackvall/Desktop/PDF_TEST/BINFO_TEST.pdf";
 
     private Font theFont = new Font(Font.FontFamily.TIMES_ROMAN, 16, Font.BOLD);
     private Font theSmallFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
@@ -72,13 +72,23 @@ public class ListServiceImpl implements ListService {
 
             theList.add(h);
 
-            ArrayList <String> emailList = waitinglist.getWaitinglist(listLength, apartmentNumber); // vi skal ha length + apart fra bruger
+            // System.out.println("LIST SERVICE GENERATE PDF TEST 1 BEFORE getWaitinglist");
+
+            // ArrayList <String> emailList = waitinglist.getWaitinglist(listLength, apartmentNumber); // vi skal ha
+            // length + apart fra bruger
+
+            ArrayList <String> emailList = new ArrayList<>();
+            emailList.add("amin@amin.dk");
+            emailList.add("big@boss.dk");
+            emailList.add("morten@hotmale.dk");
+
+            // System.out.println("LIST SERVICE GENERATE PDF TEST 2 AFTER getWaitinglist");
 
             for (String email: emailList) {
                 System.out.println("Finding info for user with email: " + email);
                 User listUser = userService.findUserByEmail(email);
                 Paragraph p = new Paragraph();
-                Chunk seniority = new Chunk("\nAncienittet: " + (emailList.indexOf(email)) + "\n", theFont);
+                Chunk seniority = new Chunk("\nAncienittet: " + (emailList.indexOf(email) + 1) + "\n", theFont);
                 Chunk name = new Chunk("Navn: " + listUser.getName() + " " + listUser.getLastName() + "\n", theSmallFont);
                 Chunk phoneNumber = new Chunk("Telefonnummer: " + listUser.getPhoneNumber() + "\n", theSmallFont);
                 Chunk user_email = new Chunk("E-mail: " + listUser.getEmail() + "\n", theSmallFont);

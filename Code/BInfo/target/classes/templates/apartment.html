@@ -40,6 +40,7 @@
                 <thead>
                 <tr>
                   <th>#</th>
+                  <th>Nummer</th>
                   <th>Addresse</th>
                   <th>Nummer</th>
                   <th>Kvm</th>
@@ -53,6 +54,7 @@
                 <tbody>
                 <tr th:each="apartment, status : ${apartment}">
                   <td th:text="${status.count}">1</td>
+                  <td th:text="${apartment.id}">id</td>
                   <td th:text="${apartment.address}">Address</td>
                   <td th:text="${apartment.number}">number</td>
                   <td th:text="${apartment.size}">size</td>
@@ -83,15 +85,16 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>#</th>
-                  <th>Addresse</th>
-                  <th>Nummer</th>
-                  <th>Kvm</th>
-                  <th>Etage</th>
-                  <th>Etager</th>
-                  <th>Have j/n</th>
-                  <th>Værelser</th>
-                  <th></th>
+                    <th>#</th>
+                    <th>Nummer</th>
+                    <th>Addresse</th>
+                    <th>Nummer</th>
+                    <th>Kvm</th>
+                    <th>Etage</th>
+                    <th>Etager</th>
+                    <th>Have j/n</th>
+                    <th>Værelser</th>
+                    <th></th>
                 </tr>
                 </tfoot>
               </table>

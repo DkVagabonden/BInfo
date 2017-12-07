@@ -14,7 +14,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
-
 /**
  * Whenever a user attempts to access a page that is restricted to roles they do not have,
  * the application will return a status code of 403, which means Access Denied.<p></p>
@@ -40,13 +39,6 @@ import org.springframework.security.web.access.AccessDeniedHandler;
  * that we can define custom logic to be executed before redirecting to the 403 page.
  * For this, we created a class that implements the AccessDeniedHandler interface
  * and overrides the handle() method.
- *<br>
- * The custom logic logs a warning message for every access denied attempt
- * containing the user that made the attempt and the protected URL they were trying to access:
- * <p>
- * 2017-11-30 10:42:47.236  WARN 5232 --- [nio-8080-exec-6] d.b.c.CustomAccessDeniedHandler
- * <br>User: user@test.dk[user] attempted to access the protected URL: /apartment<br>
- * This user tried to access /apartment which requied admin rank.
  *
  * <p>
  * More implamentations:
@@ -73,7 +65,21 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
     public static final Logger LOG = LoggerFactory.getLogger(CustomAccessDeniedHandler.class);
 
     @Override
-    public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException exc) throws IOException, ServletException {
+    /**
+     *<br>
+     * The custom logic logs a warning message for every access denied attempt
+     * containing the user that made the attempt and the protected URL they were trying to access:
+     * <p>
+     * 2017-11-30 10:42:47.236  WARN 5232 --- [nio-8080-exec-6] d.b.c.CustomAccessDeniedHandler
+     * <br>User: user@test.dk[user] attempted to access the protected URL: /apartment<br>
+     * This user tried to access /apartment which requied admin rank.
+     *
+     * @param request Extends the ServletRequest interface to provide request information for HTTP servlets.
+     * @param response Extends the ServletResponse interface to provide HTTP-specific functionality in sending a response. For example, it has methods to access HTTP headers and cookies.
+     * @param exc Checked exception thrown when a operation is denied, typically due to a file permission or other access check.
+     *
+     */
+        public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException exc) throws IOException, ServletException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null) {
             LOG.warn("User: " + auth.getName() +  auth.getAuthorities() + " attempted to access the protected URL: " + request.getRequestURI());
