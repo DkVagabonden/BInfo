@@ -41,12 +41,12 @@ public class ForgotPasswordController {
         modelAndView.setViewName("forgotpasswordlink");
         User user = userService.findUserByEmail(email);
         if (user == null) {
-            modelAndView.addObject("Message", "Linket virker ikke, prøv igen.");
+            modelAndView.setViewName("redirect:/login");
         }else{
-            if (user.getPassword().equals(password)){
+            if (user.getPassword().replace("/","").equals(password)){
 
             }else{
-                modelAndView.addObject("Message", "Linket virker ikke, prøv igen.");
+                modelAndView.setViewName("redirect:/login");
             }
         }
         return modelAndView;
@@ -60,7 +60,7 @@ public class ForgotPasswordController {
         if (user == null) {
             modelAndView.addObject("Message", "Linket virker ikke, prøv igen.");
         }else{
-            if (user.getPassword().equals(password)){
+            if (user.getPassword().replace("/","").equals(password)){
                 if (password1.equals(password2)){
                     modelAndView.addObject("Message", "Din kode er blevet ændret");
                     modelAndView.setViewName("redirect:/login");
@@ -93,7 +93,7 @@ public class ForgotPasswordController {
         String body = "<B>Reset dit password</B><br><br>";
         body += "Hvis du har bedt om at få dit password resat,<br> beder vi dig ";
         body += "beder vi dig klikke på nedenstående link.<br><br>";
-        body += "<a href=\"http://localhost:8080/forgotpassword/"+user.getPassword()+"/"+user.getEmail()+"/newpassword\">Klik her for at reset dit password</a><br><br>";
+        body += "<a href=\"http://localhost:8080/forgotpassword/"+user.getPassword().replace("/","")+"/"+user.getEmail()+"/newpassword\">Klik her for at reset dit password</a><br><br>";
         body += "Har du ikke bedt om et reset skal du bare ignore denne email.<br><br>";
         body += "Mvh<br>";
         body += "Jens Boligforening<br>";
