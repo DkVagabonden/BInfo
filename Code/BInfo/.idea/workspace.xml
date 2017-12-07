@@ -60,103 +60,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/services/UserServiceImpl.java">
+      <file leaf-file-name="ListServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/services/ListServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="95" column="61" lean-forward="false" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="46" column="28" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+            <state relative-caret-position="4160">
+              <caret line="116" column="20" lean-forward="false" selection-start-line="116" selection-start-column="14" selection-end-line="116" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/UsersController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="40" column="32" lean-forward="false" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BinfoApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/BinfoApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecurityConfiguration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/configurations/SecurityConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="56" column="50" lean-forward="true" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomAccessDeniedHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CustomAccessDeniedHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/configurations/CustomAccessDeniedHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="79" column="9" lean-forward="false" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
+            <state relative-caret-position="982">
+              <caret line="79" column="6" lean-forward="false" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
+      <file leaf-file-name="ApartmentImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/services/ApartmentImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="12" column="44" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="7" />
+            <state relative-caret-position="1240">
+              <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="error.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error.html">
+      <file leaf-file-name="apartment.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/apartment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="109" column="23" lean-forward="true" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
+            <state relative-caret-position="2800">
+              <caret line="70" column="31" lean-forward="false" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/layout.html">
+      <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="150" column="0" lean-forward="true" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+            <state relative-caret-position="3280">
+              <caret line="82" column="82" lean-forward="false" selection-start-line="82" selection-start-column="82" selection-end-line="82" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="accessDenied.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/accessDenied.html">
+      <file leaf-file-name="add-edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/apartment/add-edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1118">
-              <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+            <state relative-caret-position="1400">
+              <caret line="35" column="98" lean-forward="false" selection-start-line="35" selection-start-column="98" selection-end-line="35" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -169,6 +127,7 @@
       <list>
         <option value="HTML File" />
         <option value="package-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -188,10 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/test.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/main.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/error.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/access-denied.html" />
         <option value="$PROJECT_DIR$/sql/14-10-2017.sql" />
         <option value="$PROJECT_DIR$/src/main/java/dk/projectv2/controllers/LoginController.java" />
@@ -229,16 +184,20 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/jquery.dataTables.min.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/users.html" />
         <option value="$PROJECT_DIR$/sql/04-12-2017.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/configurations/CustomAccessDeniedHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ApartmentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/dk/binfo/services/ApartmentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/dk/binfo/services/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/UsersController.java" />
         <option value="$PROJECT_DIR$/src/main/java/package-info.java" />
         <option value="$PROJECT_DIR$/src/main/java/dk/binfo/configurations/package-info.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/accessDenied.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/error.html" />
+        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/RegisterController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/AccessDeniedController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/configurations/CustomAccessDeniedHandler.java" />
       </list>
     </option>
   </component>
@@ -277,7 +236,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -339,6 +298,15 @@
               <item name="BInfo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="binfo" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BInfo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BInfo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -373,15 +341,24 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="lists" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BInfo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BInfo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -545,12 +522,13 @@
       <workItem from="1510229943851" duration="6628000" />
       <workItem from="1511425635603" duration="4432000" />
       <workItem from="1511514217817" duration="29523000" />
-      <workItem from="1512121928043" duration="19300000" />
+      <workItem from="1512121928043" duration="21462000" />
+      <workItem from="1512638583154" duration="274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165509000" />
+    <option name="totallyTimeSpent" value="167945000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -567,33 +545,33 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944444" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944444" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9022222" sideWeight="0.50213903" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32333332" sideWeight="0.49786097" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32998326" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32333332" sideWeight="0.49786097" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944444" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20561497" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20828877" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28609625" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833335" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944444" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833335" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,37 +592,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/home.html" />
-    <entry file="das://table:/32f8a30/f1112a2d-ab67-484f-abe7-ba754bf92454/binfo.user_role_1" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/home.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="27" column="66" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-480">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/apartment/add-edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="104" column="26" lean-forward="false" selection-start-line="101" selection-start-column="20" selection-end-line="104" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -662,39 +613,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/pizza.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/add">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="10" column="21" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/services/ListServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/pizza.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/add" />
     <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/models/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
           <caret line="81" column="19" lean-forward="false" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,7 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
           <caret line="55" column="26" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,7 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2320">
           <caret line="35" column="111" lean-forward="false" selection-start-line="35" selection-start-column="111" selection-end-line="35" selection-end-column="111" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,7 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="4187" lean-forward="false" selection-start-line="0" selection-start-column="4187" selection-end-line="0" selection-end-column="4187" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -742,25 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="143" column="442" lean-forward="false" selection-start-line="143" selection-start-column="437" selection-end-line="143" selection-end-column="442" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="82" column="82" lean-forward="false" selection-start-line="82" selection-start-column="82" selection-end-line="82" selection-end-column="82" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/apartment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="80" column="23" lean-forward="true" selection-start-line="65" selection-start-column="18" selection-end-line="80" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,7 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="69" column="72" lean-forward="false" selection-start-line="69" selection-start-column="72" selection-end-line="69" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4920">
           <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,14 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/services/ApartmentImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/services/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -836,34 +729,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-92">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ApartmentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3720">
-          <caret line="109" column="1" lean-forward="false" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
-          <folding>
-            <marker date="1512384841043" expanded="true" signature="2091:2812" ph="{...}" />
-            <marker date="1512384841043" expanded="true" signature="2881:3417" ph="{...}" />
-            <marker date="1512384841043" expanded="true" signature="3563:3990" ph="{...}" />
-            <marker date="1512384841043" expanded="true" signature="4205:4712" ph="{...}" />
-            <marker date="1512384841043" expanded="true" signature="4457:4712" ph="{...}" />
-            <marker date="1512384841043" expanded="true" signature="4858:5008" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/repositories/ApartmentRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="7" column="78" lean-forward="false" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,7 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,7 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,35 +782,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/package-info.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/package-info.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/package-info.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/configurations/package-info.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1088">
+          <caret line="150" column="0" lean-forward="true" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/package-info.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="480">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/configurations/package-info.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/accessDenied.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1118">
+          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="109" column="23" lean-forward="true" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/UsersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
+        <state relative-caret-position="1160">
           <caret line="40" column="32" lean-forward="false" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="25" column="59" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/AccessDeniedController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -955,50 +849,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/layout.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="150" column="0" lean-forward="true" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+        <state relative-caret-position="840">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ApartmentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="7" />
+        <state relative-caret-position="3468">
+          <caret line="109" column="1" lean-forward="false" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
+          <folding>
+            <marker date="1512384841043" expanded="true" signature="4457:4712" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ForgotPasswordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/services/ListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4160">
+          <caret line="116" column="20" lean-forward="false" selection-start-line="116" selection-start-column="14" selection-end-line="116" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/services/ApartmentImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1240">
+          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/apartment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2800">
+          <caret line="70" column="31" lean-forward="false" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3280">
+          <caret line="82" column="82" lean-forward="false" selection-start-line="82" selection-start-column="82" selection-end-line="82" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/apartment/add-edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1400">
+          <caret line="35" column="98" lean-forward="false" selection-start-line="35" selection-start-column="98" selection-end-line="35" selection-end-column="98" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/configurations/CustomAccessDeniedHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="79" column="9" lean-forward="false" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="46" column="28" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/accessDenied.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1118">
-          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="109" column="23" lean-forward="true" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
+        <state relative-caret-position="982">
+          <caret line="79" column="6" lean-forward="false" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
           <folding />
         </state>
       </provider>
