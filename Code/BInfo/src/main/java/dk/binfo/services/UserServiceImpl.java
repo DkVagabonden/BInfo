@@ -63,7 +63,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	public User update(User user){
 		User updatedUser = userRepository.findByEmail(user.getEmail());
 
-		updatedUser.setEmail(user.getEmail());
 		updatedUser.setName(user.getName());
 		updatedUser.setLastName(user.getLastName());
 		updatedUser.setPhoneNumber(user.getPhoneNumber());
