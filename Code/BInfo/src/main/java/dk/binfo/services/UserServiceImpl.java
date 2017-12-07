@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 
 import dk.binfo.models.Role;
 import dk.binfo.models.User;
+import dk.binfo.repositories.HomeRepository;
 import dk.binfo.repositories.RoleRepository;
 import dk.binfo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 		return userRepository.findByEmail(email);
 	}
+
 
 	@Override
 	@Transactional
