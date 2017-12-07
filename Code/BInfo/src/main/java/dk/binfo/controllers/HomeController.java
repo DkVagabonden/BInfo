@@ -62,10 +62,6 @@ public class HomeController {
         Role userrole = roleRepository.findByRole("user");
         System.out.println(roleRepository.findByRole("user"));
 
-        for(Role role:roleRepository.findAll()) {
-            System.out.println(role.getRole() + role.getRole_id());
-        }
-
         modelAndView.addObject("user", user);
         modelAndView.addObject("userMessage","Du er logget ind");
         modelAndView.setViewName("/home");

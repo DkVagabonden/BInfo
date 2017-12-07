@@ -28,7 +28,7 @@ public class RegisterController {
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
-        User userExists = userService.findUserByEmail(user.getEmail());
+        User userExists = userService.findUserByEmail("vagabonden@outlook.com"); //TODO email
         if (userExists != null) {
             bindingResult.rejectValue("email", "error.user", "Der eksisterer allerede en bruger med den angivne email");
         }

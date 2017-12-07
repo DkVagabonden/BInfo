@@ -77,12 +77,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		Seniority seniority = new Seniority();
 		long id = seniorityRepository.count();
 		if (id == 0) {
-			seniority.setseniority(id + 1);
+			//seniority.setseniority(id + 1);
 			System.out.println("if"); //TODO FJERN
 			seniorityRepository.save(seniority);
 			return seniority;
 		} else {
-			seniority.setseniority(id + 2);
+			//seniority.setseniority(id + 2);
 			System.out.println("else"); //TODO fjern
 			seniorityRepository.save(seniority);
 			return seniority;
@@ -93,7 +93,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	@Override
 	@Transactional
 	public User update(User user){
-		User updatedUser = userRepository.findByEmail(user.getEmail());
+		User updatedUser = userRepository.findByEmail("Vagabonden@outlook.com"); //TODO email
 
 		updatedUser.setName(user.getName());
 		updatedUser.setLastName(user.getLastName());
@@ -120,7 +120,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	@Override
 	@Transactional
 	public User updateUserSettings(User user){
-		User updateUser = userRepository.findByEmail(user.getEmail());
+		User updateUser = userRepository.findByEmail("Vagabonden@outlook.com"); //TODO email
 		System.out.println(user.getPassword());
 		System.out.println(user.getPhoneNumber());
 		if(user.getPassword().equalsIgnoreCase("") && user.getPhoneNumber() != null)
@@ -161,7 +161,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 
 	private UserDetails buildUserForAuthentication(User user, List<GrantedAuthority> authorities) {
-		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), user.isActive(), true, true, true, authorities);
+		return new org.springframework.security.core.userdetails.User("Vagabonden@outlook.com", user.getPassword(), user.isActive(), true, true, true, authorities); //TODO email
 	}
 
 

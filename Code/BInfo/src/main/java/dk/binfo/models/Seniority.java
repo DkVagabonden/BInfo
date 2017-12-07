@@ -1,25 +1,24 @@
 package dk.binfo.models;
 
+import javafx.concurrent.Task;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="seniority")
 public class Seniority {
     @Id
-    @Column(name="seniority")
-    private long seniority;
+    @OneToMany(mappedBy="seniority", cascade = CascadeType.ALL)
+    private Set<user_ranking> ranking;
 
     @Basic(optional = false)
     @Column(name = "date", insertable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
-    public long getseniority() {
-        return seniority;
-    }
 
-    public void setseniority(long seniority) {
-        this.seniority = seniority;
-    }
 }

@@ -15,11 +15,11 @@ import org.springframework.data.annotation.Transient;
 @Table(name = "user")
 public class User {
 
-	@Id
-	@Column(name = "email")
-	@Email(message = "*Please provide a valid Email")
-	@NotEmpty(message = "*Please provide an email")
-	private String email;
+    @EmbeddedId
+    private User_rankingerID user_rankingerID;
+
+	@OneToMany(mappedBy="email", cascade = CascadeType.ALL)
+	private Set<user_ranking> ranking;
 
 	@Column(name = "password")
 	@Length(min = 5, message = "*Your password must have at least 5 characters")
@@ -50,9 +50,14 @@ public class User {
 	@JoinTable(name = "user_ranking", joinColumns = @JoinColumn(name = "seniority"), inverseJoinColumns = @JoinColumn(name = "list"))
 	private Set<Role> list;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<user_ranking> raking;
+
 	public Set<Role> getList() {
 		return list;
 	}
+
+	public User(){}
 
 	public void setList(Set<Role> list) {
 		this.list = list;
@@ -86,14 +91,6 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public boolean isActive() {
