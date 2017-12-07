@@ -5,9 +5,12 @@ import java.util.*;
 import javax.transaction.Transactional;
 
 import dk.binfo.models.Role;
+import dk.binfo.models.Seniority;
 import dk.binfo.models.User;
-import dk.binfo.repositories.HomeRepository;
+import dk.binfo.models.user_ranking;
 import dk.binfo.repositories.RoleRepository;
+import dk.binfo.repositories.SeniorityRepository;
+import dk.binfo.repositories.UserRankingRepository;
 import dk.binfo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,6 +31,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+	@Autowired
+	private SeniorityRepository seniorityRepository;
+
+	@Autowired
+	private UserRankingRepository userRankingRepository;
+
 	@Override
 	public User findUserByEmail(String email) {
 
@@ -42,12 +51,15 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 
 	@Override
-	public void register(User user) {
+	public void register(User user, String role) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		user.setActive(true);
 		user.setPhoneNumber(user.getPhoneNumber());
-		Role userRole = roleRepository.findByRole("user");
+		Role userRole = roleRepository.findByRole(role);
 		user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
+		user.setList(new HashSet<Role>(Arrays.asList(userRole)));
+		Seniority seniority = setUserSeniority();
+		user.setSeniority(new HashSet<Seniority>(Arrays.asList(seniority)));
 		userRepository.save(user);
 	}
 
@@ -59,6 +71,24 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		userRepository.delete(deletedUser);
 		return deletedUser;
 	}
+
+	@Override
+	public Seniority setUserSeniority() {
+		Seniority seniority = new Seniority();
+		long id = seniorityRepository.count();
+		if (id == 0) {
+			seniority.setseniority(id + 1);
+			System.out.println("if"); //TODO FJERN
+			seniorityRepository.save(seniority);
+			return seniority;
+		} else {
+			seniority.setseniority(id + 2);
+			System.out.println("else"); //TODO fjern
+			seniorityRepository.save(seniority);
+			return seniority;
+		}
+	}
+
 
 	@Override
 	@Transactional

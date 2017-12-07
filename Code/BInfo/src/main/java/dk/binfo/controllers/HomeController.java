@@ -1,10 +1,13 @@
 package dk.binfo.controllers;
 
 import dk.binfo.models.List_and_seniority;
+import dk.binfo.models.Role;
 import dk.binfo.models.User;
 import dk.binfo.repositories.HomeRepository;
+import dk.binfo.repositories.RoleRepository;
 import dk.binfo.services.SeniorityService;
 import dk.binfo.services.UserService;
+import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class HomeController {
@@ -26,7 +30,7 @@ public class HomeController {
     private SeniorityService seniorityService;
 
     @Autowired
-    private HomeRepository homeRepository;
+    private RoleRepository roleRepository;
 
     @RequestMapping(value= "/home", method = RequestMethod.GET)
     public ModelAndView userHome(){
@@ -46,16 +50,21 @@ public class HomeController {
          /*   for (int x = 0; x <= size-1; x++)
             {
                 List_and_seniority seniority = seniority2.get(x);
-                System.out.println("Email " + seniority.getEmail() + " List_priority " + seniority.getList_priority() + " Seniority " + seniority.getSeniority());
+                System.out.println("Email " + seniority.getEmail() + " List_priority " + seniority.getList_priority() + " SeniorityRepository " + seniority.getSeniority());
                 found++;
             } */
          ;
 
             for (List_and_seniority seniority:seniorityService.findAll()) {
-                System.out.println("Email " + seniority.getEmail() + " List_priority " + seniority.getList_priority() + " Seniority " + seniority.getSeniority());
+                System.out.println("Email " + seniority.getEmail() + " List_priority " + seniority.getList_priority() + " SeniorityRepository " + seniority.getSeniority());
             }
         }
+        Role userrole = roleRepository.findByRole("user");
+        System.out.println(roleRepository.findByRole("user"));
 
+        for(Role role:roleRepository.findAll()) {
+            System.out.println(role.getRole() + role.getRole_id());
+        }
 
         modelAndView.addObject("user", user);
         modelAndView.addObject("userMessage","Du er logget ind");

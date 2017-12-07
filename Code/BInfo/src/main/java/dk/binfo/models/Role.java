@@ -1,34 +1,33 @@
 package dk.binfo.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "role")
 public class Role {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="role_id")
-	private int id;
-	@Column(name="role")
+	private int role_id;
+
+	@Column(name = "role")
 	private String role;
-	
-	public int getId() {
-		return id;
+
+	public int getRole_id() {
+		return role_id;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public void setRole_id(int role_id) {
+		this.role_id = role_id;
 	}
+
 	public String getRole() {
 		return role;
 	}
+
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
 }

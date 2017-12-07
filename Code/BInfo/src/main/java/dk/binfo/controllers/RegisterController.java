@@ -35,7 +35,7 @@ public class RegisterController {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("registration");
         } else {
-            userService.register(user);
+            userService.register(user,"user");
             modelAndView.addObject("successMessage", "SUCCES!: Du har tilføjet en ny bruger.");
             modelAndView.addObject("user", new User());
             modelAndView.setViewName("registration");

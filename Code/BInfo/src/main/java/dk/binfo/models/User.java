@@ -1,17 +1,10 @@
 package dk.binfo.models;
 
+import java.util.List;
 import java.util.Set;
+import dk.binfo.models.Seniority;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
@@ -49,27 +42,27 @@ public class User {
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
 
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "user_seniority", joinColumns = @JoinColumn(name = "email"), inverseJoinColumns = @JoinColumn(name = "seniority"))
+	private Set<Seniority> seniority;
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "user_ranking", joinColumns = @JoinColumn(name = "seniority"), inverseJoinColumns = @JoinColumn(name = "list"))
+	private Set<Role> list;
+
+	public Set<Role> getList() {
+		return list;
+	}
+
+	public void setList(Set<Role> list) {
+		this.list = list;
+	}
+
 	@Column(name ="phone_number")
 	private String phoneNumber;
 
-	public String getMyApartment() {
-		return myApartment;
-	}
-
-	public void setMyApartment(String myApartment) {
-		this.myApartment = myApartment;
-	}
-
 	@Column(name = "my_apartment")
 	private String myApartment;
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
 
 	public String getPassword() {
 		return password;
@@ -117,6 +110,30 @@ public class User {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public Set<Seniority> getSeniority() {
+		return seniority;
+	}
+
+	public void setSeniority(Set<Seniority> seniority) {
+		this.seniority = seniority;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getMyApartment() {
+		return myApartment;
+	}
+
+	public void setMyApartment(String myApartment) {
+		this.myApartment = myApartment;
 	}
 
 }
