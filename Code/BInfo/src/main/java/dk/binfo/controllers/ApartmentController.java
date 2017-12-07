@@ -30,14 +30,14 @@ public class ApartmentController {
     @Autowired
     private ApartmentService apartmentService;
 
-    @RequestMapping("/apartment") // This means URL's start with /demo (after Application path)
+    @RequestMapping("/apartment") // This means URL's start with /demo (after Application path) TODO Forvirrende
+    // TODO kommentar her!!!
     public ModelAndView showApartment() {
         ModelAndView modelAndView = new ModelAndView("/apartment", "apartment", repository.findAll());
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject("user", user);
         modelAndView.addObject("adminMessage","Du er logget ind som spadmin");
-        modelAndView.addObject("userMessage","U R USER"); // TODO fjern dette, da det er unødvendigt :-P
         modelAndView.setViewName("/apartment");
 
         return modelAndView;
@@ -68,7 +68,6 @@ public class ApartmentController {
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject("user", user);
         modelAndView.addObject("adminMessage","Fedt man spa du er admin");
-        modelAndView.addObject("userMessage","U R USER");
         modelAndView.addObject("apartment", new Apartment());
         modelAndView.setViewName("/apartment/add");
         return modelAndView;
@@ -107,6 +106,7 @@ public class ApartmentController {
         apartmentService.delete(id);
         return modelAndView;
     }
+
 }
 
 /*

@@ -16,7 +16,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                INTERN LISTE
+                SAMMENLÆGNINGSLISTE
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -64,14 +64,17 @@
                                         </li>
                                         <li>
                                             <form
-                                                    th:value="${id}" th:field="${id}"
-                                                    method="get">
+                                                    th:action="@{'/lists/listapartment/' + ${id}}"
+                                                    method="post">
                                                 <input type="number" class="form-control"
-                                                       th:name="id" th:placeholder="lejlighedsnr.">
-                                                <a th:href="@{'/lists/listapartment/' + ${id}}"
-                                                        class="btn btn-success btn-block">Se Liste</a>
-
+                                                       name="id" id="id" th:placeholder="lejlighedsnr.">
                                             </form>
+                                        </li>
+                                        <!-- Lav button til generering af liste -->
+                                        <li>
+                                            <a th:href="@{'/lists/listapartment/' + ${id}}"
+                                               class="btn btn-success btn-block">Se
+                                                Liste</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -98,7 +101,8 @@
                                     <td th:text="${listuser.name}">Fornavn</td>
                                     <td th:text="${listuser.lastName}">Efternavn</td>
                                     <td th:text="${listuser.phoneNumber}">Telefonnummer</td>
-                                    <td th:text="${listuser.myApartment}">Brugers Lejlighed</td>
+                                    <td th:text="${listuser.myApartment}">Brugers
+                                    Lejlighed</td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
@@ -144,4 +148,3 @@
 </div>
 </body>
 </html>
-

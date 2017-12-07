@@ -7,6 +7,8 @@ import java.util.List;
 public interface UserService {
 	User findUserByEmail(String email);
 	User updateUserSettings(User user);
+	User deleteUser(String email);
+	User update(User user);
 	List<User> findAll();
 	void register(User user);
 	void adminRegisterUser(User user);

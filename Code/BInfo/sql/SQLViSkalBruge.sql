@@ -193,7 +193,7 @@ CREATE TABLE `user_roles` (
   PRIMARY KEY (`email`,`role`),
   KEY `role_idx` (`role`),
   CONSTRAINT `email_2` FOREIGN KEY (`email`) REFERENCES `user` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `role` FOREIGN KEY (`role`) REFERENCES `role_types` (`id_role`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `role` FOREIGN KEY (`role`) REFERENCES role (`id_role`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

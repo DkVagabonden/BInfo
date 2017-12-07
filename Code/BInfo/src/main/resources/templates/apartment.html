@@ -72,7 +72,7 @@
                       <ul class="dropdown-menu" role="menu">
                         <li><a th:href="@{'apartment/edit/' + ${apartment.id}}">Rediger</a></li>
                         <li><a th:href="@{'apartment/delete/' + ${apartment.id}}" onclick="return confirm('Er du sikker?')">Slet</a></li>
-                        </li>
+                        <li><a th:href="@{'lists/listapartment/' + ${apartment.id}}">Se venteliste</a></li>
                         <li><a href="http://lmgtfy.com/?q=jeg+har+ingen+ide">Jeg har ingen ide</a></li>
                         <li class="divider"></li>
                         <li><a href="https://www.youtube.com/watch?v=8gyLR4NfMiI">Look at me now</a></li>

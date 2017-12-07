@@ -66,8 +66,8 @@
                                                 <span class="sr-only">Toggle Dropdown</span>
                                             </button>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a th:href="@{'users/edit/' + ${user.email}}">Rediger</a></li>
-                                                <li><a th:href="@{'users/delete/' + ${user.email}}" onclick="return confirm('Er du sikker?')">Slet</a></li>
+                                                <li><a th:href="@{'users/edit/' + ${users.email}}">Rediger</a></li>
+                                                <li><a th:href="@{'users/delete/' + ${users.email}}" onclick="return confirm('Er du sikker?')">Slet</a></li>
                                                 </li>
                                                 <li><a href="http://lmgtfy.com/?q=jeg+har+ingen+ide">Jeg har ingen ide</a></li>
                                                 <li class="divider"></li>
@@ -101,6 +101,8 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+    <!-- Main Footer -->
+    <footer th:replace="layout :: site-footer" />
     <!-- page script -->
     <script>
         $(function () {
@@ -115,8 +117,6 @@
             })
         })
     </script>
-    <!-- Main Footer -->
-    <footer th:replace="layout :: site-footer" />
 </div>
 </body>
 </html>

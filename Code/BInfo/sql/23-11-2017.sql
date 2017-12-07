@@ -52,9 +52,9 @@ CREATE TABLE IF NOT EXISTS `role` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table project.role: ~2 rows (approximately)
-DELETE FROM `role`;
+DELETE FROM role;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` (`role_id`, `role`) VALUES
+INSERT INTO role (`role_id`, `role`) VALUES
 	(1, 'ADMIN'),
 	(2, 'user');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;

@@ -50,6 +50,29 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 
 	@Override
+	@Transactional
+	public User deleteUser(String email) {
+		User deletedUser = userRepository.findByEmail(email);
+		deletedUser.setRoles(null); // Deletes this user in user_role table
+		userRepository.delete(deletedUser);
+		return deletedUser;
+	}
+
+	@Override
+	@Transactional
+	public User update(User user){
+		User updatedUser = userRepository.findByEmail(user.getEmail());
+
+		updatedUser.setEmail(user.getEmail());
+		updatedUser.setName(user.getName());
+		updatedUser.setLastName(user.getLastName());
+		updatedUser.setPhoneNumber(user.getPhoneNumber());
+		updatedUser.setActive(user.isActive());
+
+		return updatedUser;
+	}
+
+	@Override
 	public void adminRegisterUser(User user) {
 		Random ran = new Random();
 		String Password = generateString(ran,"qwertyuiopasdfghjklzxcvbnm",8);

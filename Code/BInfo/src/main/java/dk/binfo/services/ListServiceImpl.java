@@ -126,6 +126,8 @@ public class ListServiceImpl implements ListService {
             User listUser = userService.findUserByEmail(email);
             generatedList.add(listUser);
         }
+        System.out.println("Printing from generatedList in ListServiceImpl.java");
+        System.out.println(generatedList);
         return generatedList;
     }
 
@@ -151,6 +153,8 @@ public class ListServiceImpl implements ListService {
             User listUser = userService.findUserByEmail(email);
             generatedApartmentList.add(listUser);
         }
+        System.out.println("Printing from generatedApartmentList in ListServiceImpl.java");
+        System.out.println(generatedApartmentList);
         return generatedApartmentList;
     }
 }

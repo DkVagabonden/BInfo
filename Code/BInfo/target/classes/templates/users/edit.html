@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 
 <head th:include="layout :: site-head">
-    <title>Admin - Tilføj bruger</title>
+    <title>Admin - Rediger lejlighed</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 </head>
 
@@ -19,7 +19,7 @@
         <section class="content-header">
             <h1>
                 Brugere
-                <small>Tilføj</small>
+                <small>Rediger</small>
             </h1>
         </section>
 
@@ -29,17 +29,17 @@
             <!-- Horizontal Form -->
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Tilføj bruger</h3>
+                    <h3 class="box-title">Rediger lejlighed</h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal" id="form-horizontal" autocomplete="off" action="#" th:action="@{/users/add}" th:object="${user}" method="post" role="form">
+                <form class="form-horizontal" id="form-horizontal" autocomplete="off" th:action="@{'/users/edit/' + ${users.email}}" th:object="${users}" method="post" role="form">
                     <div class="box-body">
 
                         <div class="form-group">
                             <label for="inputEmail" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputEmail" th:field="*{email}" required="" placeholder="Email">
+                                <input type="text" class="form-control" id="inputEmail" th:value="*{email}" th:field="*{email}" required="" type="text" placeholder="Email">
                                 <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="validation-message"></label>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">Fornavn</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" th:field="*{name}" required="" placeholder="Fornavn">
+                                <input type="text" class="form-control" id="name" th:value="*{name}" th:field="*{name}" required="" type="text" placeholder="Fornavn">
                                 <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="validation-message"></label>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                         <div class="form-group">
                             <label for="lastName" class="col-sm-2 control-label">Efternavn</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="lastName" th:field="*{lastName}" required="" placeholder="Efternavn">
+                                <input type="text" class="form-control" id="lastName" th:value="*{lastName}" th:field="*{lastName}" type="text" required="" placeholder="Efternavn">
                                 <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="validation-message"></label>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                         <div class="form-group">
                             <label for="phoneNumber" class="col-sm-2 control-label">Telefonnummer</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="phoneNumber" th:field="*{phoneNumber}" required="" placeholder="Telefonnummber">
+                                <input type="text" class="form-control" id="phoneNumber" th:value="*{phoneNumber}" th:field="*{phoneNumber}" type="number" required="" placeholder="Telefonnummer">
                                 <label th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="validation-message"></label>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                             <div class="col-sm-10" id="garden">
                                 <div class="checkbox icheck">
                                     <label>
-                                        <input id="active" th:field="*{active}" name="active" th:value="true" type="checkbox">
+                                        <input id="remember" th:value="*{active}" name="remember-me" th:field="*{active}" type="checkbox">
                                         <label th:if="${#fields.hasErrors('active')}" th:errors="*{active}" class="validation-message"></label>
                                     </label>
                                 </div>
@@ -83,14 +83,14 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="reset" class="btn btn-default">Reset</button>
-                        <button type="submit" class="btn btn-info pull-right">Tilføj</button>
+                        <button type="reset" class="btn btn-default"><a onclick="return confirm('Er du sikker?')">Reset</a></button>
+                        <button type="Edit"  value ="Edit" class="btn btn-info pull-right"><a onclick="return confirm('Er du sikker?')">Tilføj</a></button>
                     </div>
                     <!-- /.box-footer -->
                 </form>
             </div>
             <!-- /.box -->
-
+            <p class="admin-message-text text-center" th:utext="${successMessage}"></p>
         </section>
         <!-- /.content -->
     </div>
