@@ -3,6 +3,7 @@ package dk.binfo.services;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,9 +43,6 @@ public class ListServiceImpl implements ListService {
     @Autowired
     private Waitinglist waitinglist;
 
-    // kun til at teste med. Det skal vises i browserfane i den slutgiltige version
-    private String filePath = "/Users/jensbackvall/Desktop/PDF_TEST/BINFO_TEST.pdf";
-
     private Font theFont = new Font(Font.FontFamily.TIMES_ROMAN, 16, Font.BOLD);
     private Font theSmallFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
 
@@ -59,7 +57,7 @@ public class ListServiceImpl implements ListService {
      */
 
     @Override
-    public void generatePDF(int listLength, int apartmentNumber) {
+    public void generatePDF(int listLength, int apartmentNumber, String filePath) {
 
         Document theList = new Document();
 
@@ -72,17 +70,17 @@ public class ListServiceImpl implements ListService {
 
             theList.add(h);
 
-            // System.out.println("LIST SERVICE GENERATE PDF TEST 1 BEFORE getWaitinglist");
+            System.out.println("\n* LIST SERVICE GENERATE PDF TEST 1 BEFORE getWaitinglist *\n");
 
-            // ArrayList <String> emailList = waitinglist.getWaitinglist(listLength, apartmentNumber); // vi skal ha
+            ArrayList <String> emailList = waitinglist.getWaitinglist(listLength, apartmentNumber); // vi skal ha
             // length + apart fra bruger
 
-            ArrayList <String> emailList = new ArrayList<>();
-            emailList.add("amin@amin.dk");
-            emailList.add("big@boss.dk");
-            emailList.add("morten@hotmale.dk");
+            //ArrayList <String> emailList = new ArrayList<>();
+            //emailList.add("amin@amin.dk");
+            //emailList.add("big@boss.dk");
+            //emailList.add("morten@hotmale.dk");
 
-            // System.out.println("LIST SERVICE GENERATE PDF TEST 2 AFTER getWaitinglist");
+            System.out.println("\n* LIST SERVICE GENERATE PDF TEST 2 AFTER getWaitinglist *\n");
 
             for (String email: emailList) {
                 System.out.println("Finding info for user with email: " + email);
@@ -106,7 +104,7 @@ public class ListServiceImpl implements ListService {
 
             theList.close();
 
-            System.out.println("LIST PDF GENERATED!"); // TODO skal
+            System.out.println("\n* LIST PDF GENERATED! *\n"); // TODO skal
             // TODO den returne en PDF, eller en sti til PDF?
 
         } catch (FileNotFoundException | DocumentException e) {
@@ -159,6 +157,9 @@ public class ListServiceImpl implements ListService {
     public List<User> generateSingleApartmentList(int length, int ApartmentId) {
         List<User> generatedApartmentList = new ArrayList<>();
         ArrayList<String> emailList = waitinglist.getWaitinglist(Integer.MAX_VALUE, ApartmentId);
+        if (emailList == null) {
+            return null;
+        }
         for (String email: emailList) {
             User listUser = userService.findUserByEmail(email);
             generatedApartmentList.add(listUser);

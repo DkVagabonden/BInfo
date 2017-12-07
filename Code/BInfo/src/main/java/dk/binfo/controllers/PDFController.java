@@ -21,14 +21,17 @@ public class PDFController {
 
     @RequestMapping(value={"/lists/pdf"})
     public ModelAndView generateInternListPDF() {
-        System.out.println("PDF TEST 1");
-        ModelAndView modelAndView = new ModelAndView("/lists/pdf", "list", listService
+        System.out.println("\n* Initiating listService.generateList *\n");
+        ModelAndView modelAndView = new ModelAndView("/lists/internal", "list", listService
                 .generateList(Integer.MAX_VALUE, 2));
-        System.out.println("PDF TEST 2");
-        listService.generatePDF(Integer.MAX_VALUE, 33);
+        System.out.println("\n* Generating PDF *\n");
+        String filePath = ""; // filePath
+        listService.generatePDF(Integer.MAX_VALUE, 33, filePath);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
-        System.out.println("PDF TEST 3");
+        System.out.println("\n* Generating onscreen messages *\n");
+        modelAndView.addObject("adminMessage","Du er logget ind som spadmin");
+        modelAndView.addObject("PDFMessage","PDF er Genereret!");
         modelAndView.addObject(user);
         return modelAndView;
     }
