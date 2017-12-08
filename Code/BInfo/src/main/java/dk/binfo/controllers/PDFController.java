@@ -26,19 +26,70 @@ public class PDFController {
     @Autowired
     private ListService listService;
 
-    @RequestMapping(value={"/lists/pdf"})
+    @RequestMapping(value={"/lists/connect/pdf"})
+    public ModelAndView generateConnectListPDF() {
+        System.out.println("\n* Initiating listService.generateList *\n");
+        ModelAndView modelAndView = new ModelAndView("/lists/connect", "list", listService
+                .generateList(Integer.MAX_VALUE, 1));
+        System.out.println("\n* Generating PDF *\n");
+        String filePath = "/Users/jensbackvall/Desktop/PDF_TEST/Sammenlaegningsliste.pdf"; // filePath
+        listService.generateSingleApartmentPDF(Integer.MAX_VALUE, 33, filePath);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByEmail(auth.getName());
+        System.out.println("\n* Generating onscreen messages *\n");
+        modelAndView.addObject("adminMessage","Du er logget ind som spadmin");
+        modelAndView.addObject("PDFMessage","PDF er gemt på /Users/jensbackvall/Desktop/PDF_TEST/");
+        modelAndView.addObject(user);
+        return modelAndView;
+    }
+
+    @RequestMapping(value={"/lists/internal/pdf"})
     public ModelAndView generateInternListPDF() {
         System.out.println("\n* Initiating listService.generateList *\n");
         ModelAndView modelAndView = new ModelAndView("/lists/internal", "list", listService
                 .generateList(Integer.MAX_VALUE, 2));
         System.out.println("\n* Generating PDF *\n");
-        String filePath = "/Users/jensbackvall/Desktop/PDF_TEST/binfoPDF.pdf"; // filePath
-        listService.generatePDF(Integer.MAX_VALUE, 33, filePath);
+        String filePath = "/Users/jensbackvall/Desktop/PDF_TEST/Intern_liste.pdf"; // filePath
+        listService.generateSingleApartmentPDF(Integer.MAX_VALUE, 33, filePath);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
         System.out.println("\n* Generating onscreen messages *\n");
         modelAndView.addObject("adminMessage","Du er logget ind som spadmin");
-        modelAndView.addObject("PDFMessage","PDF er gemt på /Users/jensbackvall/Desktop/PDF_TEST/binfoPDF.pdf!");
+        modelAndView.addObject("PDFMessage","PDF er gemt på /Users/jensbackvall/Desktop/PDF_TEST/");
+        modelAndView.addObject(user);
+        return modelAndView;
+    }
+
+    @RequestMapping(value={"/lists/family/pdf"})
+    public ModelAndView generateFamilyListPDF() {
+        System.out.println("\n* Initiating listService.generateList *\n");
+        ModelAndView modelAndView = new ModelAndView("/lists/family", "list", listService
+                .generateList(Integer.MAX_VALUE, 3));
+        System.out.println("\n* Generating PDF *\n");
+        String filePath = "/Users/jensbackvall/Desktop/PDF_TEST/Familieliste.pdf"; // filePath
+        listService.generateSingleApartmentPDF(Integer.MAX_VALUE, 33, filePath);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByEmail(auth.getName());
+        System.out.println("\n* Generating onscreen messages *\n");
+        modelAndView.addObject("adminMessage","Du er logget ind som spadmin");
+        modelAndView.addObject("PDFMessage","PDF er gemt på /Users/jensbackvall/Desktop/PDF_TEST/");
+        modelAndView.addObject(user);
+        return modelAndView;
+    }
+
+    @RequestMapping(value={"/lists/external/pdf"})
+    public ModelAndView generateExternalListPDF() {
+        System.out.println("\n* Initiating listService.generateList *\n");
+        ModelAndView modelAndView = new ModelAndView("/lists/external", "list", listService
+                .generateList(Integer.MAX_VALUE, 4));
+        System.out.println("\n* Generating PDF *\n");
+        String filePath = "/Users/jensbackvall/Desktop/PDF_TEST/Ekstern_liste.pdf"; // filePath
+        listService.generateSingleApartmentPDF(Integer.MAX_VALUE, 33, filePath);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByEmail(auth.getName());
+        System.out.println("\n* Generating onscreen messages *\n");
+        modelAndView.addObject("adminMessage","Du er logget ind som spadmin");
+        modelAndView.addObject("PDFMessage","PDF er gemt på /Users/jensbackvall/Desktop/PDF_TEST/");
         modelAndView.addObject(user);
         return modelAndView;
     }

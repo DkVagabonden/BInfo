@@ -57,7 +57,7 @@ public class ListServiceImpl implements ListService {
      */
 
     @Override
-    public void generatePDF(int listLength, int apartmentNumber, String filePath) {
+    public void generateSingleApartmentPDF(int listLength, int apartmentNumber, String filePath) {
 
         Document theList = new Document();
 
@@ -72,13 +72,7 @@ public class ListServiceImpl implements ListService {
 
             System.out.println("\n* LIST SERVICE GENERATE PDF TEST 1 BEFORE getWaitinglist *\n");
 
-            ArrayList <String> emailList = waitinglist.getWaitinglist(listLength, apartmentNumber); // vi skal ha
-            // length + apart fra bruger
-
-            //ArrayList <String> emailList = new ArrayList<>();
-            //emailList.add("amin@amin.dk");
-            //emailList.add("big@boss.dk");
-            //emailList.add("morten@hotmale.dk");
+            ArrayList <String> emailList = waitinglist.getWaitinglist(listLength, apartmentNumber);
 
             System.out.println("\n* LIST SERVICE GENERATE PDF TEST 2 AFTER getWaitinglist *\n");
 
