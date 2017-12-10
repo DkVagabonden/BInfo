@@ -53,13 +53,13 @@ public class User {
 	private String phoneNumber;
 
 	@Column(name = "my_apartment")
-	private String myApartment;
+	private int myApartment;
 
-	public String getMyApartment() {
+	public int getMyApartment() {
 		return myApartment;
 	}
 
-	public void setMyApartment(String myApartment) {
+	public void setMyApartment(int myApartment) {
 		this.myApartment = myApartment;
 	}
 

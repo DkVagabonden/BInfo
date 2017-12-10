@@ -73,7 +73,8 @@
                       </button>
                       <ul class="dropdown-menu" role="menu">
                         <li><a th:href="@{'apartment/edit/' + ${apartment.id}}">Rediger</a></li>
-                        <li><a th:href="@{'apartment/delete/' + ${apartment.id}}" onclick="return confirm('Er du sikker?')">Slet</a></li>
+                        <li><a th:href="@{'apartment/delete/' + ${apartment.id}}" onclick="return
+                        confirm('Er du sikker på at du vil slette lejligheden?')">Slet</a></li>
                         <li><a th:href="@{'lists/listapartment/' + ${apartment.id}}">Se venteliste</a></li>
                         <li><a href="http://lmgtfy.com/?q=jeg+har+ingen+ide">Jeg har ingen ide</a></li>
                         <li class="divider"></li>
