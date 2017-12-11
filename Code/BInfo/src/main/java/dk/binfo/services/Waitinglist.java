@@ -193,7 +193,7 @@ public class Waitinglist {
 	 * @return      ArrayList containing emails sorted by seniority
 	 * @author 		Stonie
 	 */
-	public ArrayList<String> checkPriority(int length,ArrayList<String> emails,int ApartmentId){
+	public ArrayList<String> checkPriority(int length, ArrayList<String> emails, int ApartmentId){
 
 
 				ArrayList<String> emailssorted = getNeighbourEmails(ApartmentId);

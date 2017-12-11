@@ -74,7 +74,7 @@ public class ListController {
     }
 
     @RequestMapping(value={"/lists/listapartment/{id}"}, method = RequestMethod.GET)
-    public ModelAndView showSingleApartmentList(@PathVariable Integer id) {
+    public ModelAndView showSingleApartmentList(@PathVariable("id") Integer id) {
         System.out.println("\n* Initiating listService.generateSingleApartmentList *\n");
         ModelAndView modelAndView = new ModelAndView("/lists/listapartment", "list",
                 listService.generateSingleApartmentList(Integer.MAX_VALUE, id));

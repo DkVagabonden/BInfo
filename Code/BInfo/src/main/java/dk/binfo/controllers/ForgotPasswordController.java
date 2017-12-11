@@ -29,14 +29,14 @@ public class ForgotPasswordController {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @RequestMapping(value={"/forgotpassword"}, method = RequestMethod.GET)
-    public ModelAndView glemtpassword(){
+    public ModelAndView forgotPassword(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("forgotpassword");
         return modelAndView;
     }
 
     @RequestMapping(value={"/forgotpassword/{password}/{email}/newpassword"}, method = RequestMethod.GET)
-    public ModelAndView glemtpassword(@PathVariable("email") String email, @PathVariable("password") String password){
+    public ModelAndView forgotPassword(@PathVariable("email") String email, @PathVariable("password") String password){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("forgotpasswordlink");
         User user = userService.findUserByEmail(email);
@@ -53,7 +53,8 @@ public class ForgotPasswordController {
     }
 
     @RequestMapping(value={"/forgotpassword/{password}/{email}/newpassword"}, method = RequestMethod.POST)
-    public ModelAndView glemtpassword(@RequestParam String password1,@RequestParam String password2,@PathVariable("email") String email, @PathVariable("password") String password){
+    public ModelAndView forgotPassword(@RequestParam String password1,@RequestParam String password2,@PathVariable
+            ("email") String email, @PathVariable("password") String password){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("forgotpasswordlink");
         User user = userService.findUserByEmail(email);
@@ -77,7 +78,7 @@ public class ForgotPasswordController {
     }
 
     @RequestMapping(value = "/forgotpassword", method = RequestMethod.POST)
-    public ModelAndView forgotpassword(@RequestParam String email) {
+    public ModelAndView forgotPassword(@RequestParam String email) {
         ModelAndView modelAndView = new ModelAndView();
         User user = userService.findUserByEmail(email);
         if (user == null) {
