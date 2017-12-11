@@ -114,11 +114,11 @@ public class Waitinglist {
 		}
 		ArrayList<String> emailssorted = new ArrayList<String>();
 			try {
-				String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=?";
+				String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=? AND list_priority=1";
 				for (int i = 1;i<emailsunsorted.size();i++){
-					SQLString += " OR email=?";
+					SQLString += " OR email=? AND list_priority=1";
 				}
-				String SQLEND = " AND list_priority=1 ORDER BY seniority ASC;";
+				String SQLEND = " ORDER BY seniority ASC;";
 				SQLString += SQLEND;
 				PreparedStatement sql = jdbcTemplate.getDataSource().getConnection().prepareStatement(SQLString);
 				for (int i = 0;i<emailsunsorted.size();i++){
@@ -198,11 +198,11 @@ public class Waitinglist {
 
 				ArrayList<String> emailssorted = getNeighbourEmails(ApartmentId);
 				try {
-					String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=?";
+					String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=? AND list_priority=2";
 					for (int i = 1;i<emails.size();i++){
-						SQLString += " OR email=?";
+						SQLString += " OR email=? AND list_priority=2";
 					}
-					String SQLEND = " AND list_priority=2 ORDER BY seniority ASC;";
+					String SQLEND = " ORDER BY seniority ASC;";
 					SQLString += SQLEND;
 					PreparedStatement sql = jdbcTemplate.getDataSource().getConnection().prepareStatement(SQLString);
 					for (int i = 0;i<emails.size();i++){
@@ -219,11 +219,11 @@ public class Waitinglist {
 					e.printStackTrace();
 				}
 		try {
-			String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=?";
+			String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=? AND list_priority=3";
 			for (int i = 1;i<emails.size();i++){
-				SQLString += " OR email=?";
+				SQLString += " OR email=? AND list_priority=3";
 			}
-			String SQLEND = " AND list_priority=3 ORDER BY seniority ASC;";
+			String SQLEND = " ORDER BY seniority ASC;";
 			SQLString += SQLEND;
 			PreparedStatement sql = jdbcTemplate.getDataSource().getConnection().prepareStatement(SQLString);
 			for (int i = 0;i<emails.size();i++){
@@ -240,11 +240,11 @@ public class Waitinglist {
 			e.printStackTrace();
 		}
 		try {
-			String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=?";
+			String SQLString = "SELECT email FROM `list_and_seniority` WHERE email=? AND list_priority=4";
 			for (int i = 1;i<emails.size();i++){
-				SQLString += " OR email=?";
+				SQLString += " OR email=? AND list_priority=4";
 			}
-			String SQLEND = " AND list_priority=4 ORDER BY seniority ASC;";
+			String SQLEND = " ORDER BY seniority ASC;";
 			SQLString += SQLEND;
 			PreparedStatement sql = jdbcTemplate.getDataSource().getConnection().prepareStatement(SQLString);
 			for (int i = 0;i<emails.size();i++){
