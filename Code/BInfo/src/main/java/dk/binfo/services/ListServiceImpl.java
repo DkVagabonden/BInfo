@@ -81,11 +81,11 @@ public class ListServiceImpl implements ListService {
                 Chunk seniority = new Chunk("\nAncienittet: " + (emailList.indexOf(email)) + "\n", theFont);
                 Chunk name = new Chunk("Navn: " + listUser.getName() + " " + listUser.getLastName() + "\n", theSmallFont);
                 Chunk phoneNumber = new Chunk("Telefonnummer: " + listUser.getPhoneNumber() + "\n", theSmallFont);
-               // Chunk user_email = new Chunk("E-mail: " + listUser.getEmail() + "\n", theSmallFont); //TODO email
+                Chunk user_email = new Chunk("E-mail: " + listUser.getEmail() + "\n", theSmallFont);
                 p.add(seniority);
                 p.add(name);
                 p.add(phoneNumber);
-              //  p.add(user_email); //TODO email
+                p.add(user_email);
                 p.setAlignment(Element.ALIGN_CENTER);
                 theList.add(p);
                 Paragraph p2 = new Paragraph();

@@ -48,7 +48,7 @@ public class UsersController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject("user", user);
-        User userExists = userService.findUserByEmail("Vagabonden@outlook.com"); //TODO email
+        User userExists = userService.findUserByEmail(users.getEmail());
         if (userExists != null) {
             bindingResult.rejectValue("email", "error.user", "Der eksisterer allerede en bruger med den angivne email");
         }

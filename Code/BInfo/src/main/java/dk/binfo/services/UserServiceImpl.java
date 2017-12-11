@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import dk.binfo.models.Role;
 import dk.binfo.models.Seniority;
 import dk.binfo.models.User;
-import dk.binfo.models.user_ranking;
+import dk.binfo.models.UserRanking;
 import dk.binfo.repositories.RoleRepository;
 import dk.binfo.repositories.SeniorityRepository;
 import dk.binfo.repositories.UserRankingRepository;
@@ -58,8 +58,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		Role userRole = roleRepository.findByRole(role);
 		user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
 		user.setList(new HashSet<Role>(Arrays.asList(userRole)));
-		Seniority seniority = setUserSeniority();
-		user.setSeniority(new HashSet<Seniority>(Arrays.asList(seniority)));
+		user.setSeniority(new HashSet<Seniority>(Arrays.asList(setUserSeniority())));
 		userRepository.save(user);
 	}
 
@@ -77,12 +76,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		Seniority seniority = new Seniority();
 		long id = seniorityRepository.count();
 		if (id == 0) {
-			//seniority.setseniority(id + 1);
+			seniority.setseniority(id + 1);
 			System.out.println("if"); //TODO FJERN
 			seniorityRepository.save(seniority);
 			return seniority;
 		} else {
-			//seniority.setseniority(id + 2);
+			seniority.setseniority(id + 2);
 			System.out.println("else"); //TODO fjern
 			seniorityRepository.save(seniority);
 			return seniority;
@@ -93,7 +92,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	@Override
 	@Transactional
 	public User update(User user){
-		User updatedUser = userRepository.findByEmail("Vagabonden@outlook.com"); //TODO email
+		User updatedUser = userRepository.findByEmail(user.getEmail());
 
 		updatedUser.setName(user.getName());
 		updatedUser.setLastName(user.getLastName());
@@ -120,7 +119,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	@Override
 	@Transactional
 	public User updateUserSettings(User user){
-		User updateUser = userRepository.findByEmail("Vagabonden@outlook.com"); //TODO email
+		User updateUser = userRepository.findByEmail(user.getEmail());
 		System.out.println(user.getPassword());
 		System.out.println(user.getPhoneNumber());
 		if(user.getPassword().equalsIgnoreCase("") && user.getPhoneNumber() != null)
@@ -161,7 +160,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 
 	private UserDetails buildUserForAuthentication(User user, List<GrantedAuthority> authorities) {
-		return new org.springframework.security.core.userdetails.User("Vagabonden@outlook.com", user.getPassword(), user.isActive(), true, true, true, authorities); //TODO email
+		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), user.isActive(), true, true, true, authorities);
 	}
 
 
