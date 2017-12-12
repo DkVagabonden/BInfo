@@ -3,7 +3,6 @@ package dk.binfo.services;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.File;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,50 +60,21 @@ public class ListServiceImpl implements ListService {
 
         Document theList = new Document();
 
-        try {
-            PdfWriter.getInstance(theList, new FileOutputStream(new File(filePath))); // filePath ?!?!?!?!?!?!?!
+        ArrayList <String> emailList = waitinglist.getWaitinglist(listLength, apartmentNumber);
 
-            theList.open();
-
-            Header h = new Header("listHeader","New Apartment List"); // evt dags dato + listetype + lejlighed, eks. "010217_intern_ for lejlighed_23"
-
-            theList.add(h);
-
-            System.out.println("\n* LIST SERVICE GENERATE PDF TEST 1 BEFORE getWaitinglist *\n");
-
-            ArrayList <String> emailList = waitinglist.getWaitinglist(listLength, apartmentNumber);
-
-            System.out.println("\n* LIST SERVICE GENERATE PDF TEST 2 AFTER getWaitinglist *\n");
-
-            for (String email: emailList) {
-                System.out.println("Finding info for user with email: " + email);
-                User listUser = userService.findUserByEmail(email);
-                Paragraph p = new Paragraph();
-                Chunk seniority = new Chunk("\nAncienittet: " + (emailList.indexOf(email) + 1) + "\n", theFont);
-                Chunk name = new Chunk("Navn: " + listUser.getName() + " " + listUser.getLastName() + "\n", theSmallFont);
-                Chunk phoneNumber = new Chunk("Telefonnummer: " + listUser.getPhoneNumber() + "\n", theSmallFont);
-                Chunk user_email = new Chunk("E-mail: " + listUser.getEmail() + "\n", theSmallFont);
-                p.add(seniority);
-                p.add(name);
-                p.add(phoneNumber);
-                p.add(user_email);
-                p.setAlignment(Element.ALIGN_CENTER);
-                theList.add(p);
-                Paragraph p2 = new Paragraph();
-                p2.add("___________________________________________________");
-                p2.setAlignment(Element.ALIGN_CENTER);
-                theList.add(p2);
-            }
-
-            theList.close();
-
-            System.out.println("\n* LIST PDF GENERATED! *\n"); // TODO skal
-            // TODO den returne en PDF, eller en sti til PDF?
-
-        } catch (FileNotFoundException | DocumentException e) {
-            e.printStackTrace();
-        }
+        loopThroughEmailList(emailList, theList, filePath);
     }
+
+    @Override
+    public void generateCompleteListPDF(int listLength, int priority, String filePath) {
+
+        Document theList = new Document();
+
+        ArrayList <String> emailList = waitinglist.getSingleWaitinglist(listLength, priority);
+
+        loopThroughEmailList(emailList, theList, filePath);
+    }
+
 
     /**
      * The generateList method uses the getSingleWaitinglist method
@@ -162,4 +132,47 @@ public class ListServiceImpl implements ListService {
         System.out.println(generatedApartmentList);
         return generatedApartmentList;
     }
+
+    @Override
+    public void loopThroughEmailList(ArrayList <String> emailList, Document theList, String filePath) {
+        try {
+            PdfWriter.getInstance(theList, new FileOutputStream(new File(filePath))); // filePath ?!?!?!?!?!?!?!
+
+            theList.open();
+
+            Header h = new Header("listHeader","New Apartment List"); // evt dags dato + listetype + lejlighed, eks. "010217_intern_ for lejlighed_23"
+
+            theList.add(h);
+
+            for (String email: emailList) {
+                System.out.println("Finding info for user with email: " + email);
+                User listUser = userService.findUserByEmail(email);
+                Paragraph p = new Paragraph();
+                Chunk seniority = new Chunk("\nAncienittet: " + (emailList.indexOf(email) + 1) + "\n", theFont);
+                Chunk name = new Chunk("Navn: " + listUser.getName() + " " + listUser.getLastName() + "\n", theSmallFont);
+                Chunk phoneNumber = new Chunk("Telefonnummer: " + listUser.getPhoneNumber() + "\n", theSmallFont);
+                Chunk user_email = new Chunk("E-mail: " + listUser.getEmail() + "\n", theSmallFont);
+                p.add(seniority);
+                p.add(name);
+                p.add(phoneNumber);
+                p.add(user_email);
+                p.setAlignment(Element.ALIGN_CENTER);
+                theList.add(p);
+                Paragraph p2 = new Paragraph();
+                p2.add("___________________________________________________");
+                p2.setAlignment(Element.ALIGN_CENTER);
+                theList.add(p2);
+            }
+
+            theList.close();
+
+            System.out.println("\n* LIST PDF GENERATED! *\n");
+
+        } catch (FileNotFoundException | DocumentException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
+
+
