@@ -21,7 +21,6 @@ public class LoginController {
 	@Autowired
 	private UserService userService;
 
-	// Countdown
 	@RequestMapping(value={"/"}, method = RequestMethod.GET)
 	public ModelAndView index(){
 		ModelAndView modelAndView = new ModelAndView();

@@ -7,19 +7,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+/**
+ * @author Vagabonden
+ */
 @Service("apartmentService")
 public class ApartmentImpl implements ApartmentService {
 
     @Autowired
     private ApartmentRepository apartmentRepository;
-
-
-    @Override //Denne bliver ikke brugt. ikke fjern den
-    public Apartment findApartmentByNumber(String number) {
-
-        return apartmentRepository.findApartmentByNumber(number);
-    }
 
     @Override
     public void saveApartment(Apartment apartment) {
