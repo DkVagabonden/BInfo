@@ -16,7 +16,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
+/**
+ * @author Vagabonden
+ */
 @Service("userService")
 public class UserServiceImpl implements UserService, UserDetailsService {
 
@@ -32,6 +34,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 		return userRepository.findByEmail(email);
 	}
+
 
 	@Override
 	@Transactional

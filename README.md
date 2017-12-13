@@ -25,6 +25,7 @@ Download and follow the installation guide.
 ```
 **Application Server**  
 I've used Tomcat 8.5 and 9.0 - **[LINK](https://tomcat.apache.org/download-80.cgi)**
+But since we started using Spring boot, we use 8.5.23 Tomcat
 
 ### Installing  
 
@@ -37,12 +38,8 @@ Launch tomcat and go to Localhost:8080
 
 ## Built With
 
-* [JSP](https://en.wikipedia.org/wiki/JavaServer_Pages) - The web files used
+* [HTML](https://en.wikipedia.org/wiki/html) - The web files used
 * [Maven](https://maven.apache.org/) - Dependency Management
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
@@ -51,7 +48,7 @@ We use [SemVer](http://semver.org/) for versioning.
 * **Jens Backvall** - *Initial work* - [JensBackvall](https://github.com/jensbackvall)
 * **Morten Gert** - *Initial work* - [MortenGert](https://github.com/MortenGert)
 
-See also the list of [contributors](https://github.com/dkvagabonden/blogv2/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/BoligInfo/BInfo/graphs/contributors) who participated in this project.
 
 ## License
 

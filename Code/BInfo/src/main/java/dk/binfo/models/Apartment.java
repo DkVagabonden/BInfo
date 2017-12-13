@@ -15,25 +15,18 @@ public class Apartment {
     @Column(name = "id")
     private int id;
     @Column(name = "address")
-    //@NotEmpty(message = "*Du mangler lejligheds addresse")
     private String address;
     @Column(name = "number")
-  //  @NotNull(message = "*Du mangler antal værelser")
     private String number;
     @Column(name = "rooms")
-  //  @NotNull(message = "*Du mangler antal værelser")
     private Integer rooms;
     @Column(name = "garden")
-  //  @NotNull(message = "*Du mangler lejlighed have")
     private boolean garden;
     @Column(name = "size")
-  //  @NotNull(message = "*Du mangler lejlighed størrelse")
     private Integer size;
     @Column(name = "floor")
-  //  @NotNull(message = "*Du mangler lejlighedens etage")
     private Integer floor;
     @Column(name = "floors")
- //   @NotNull(message = "*Du mangler at angive antal etager i lejligheden")
     private Integer floors;
 
     public int getId() {

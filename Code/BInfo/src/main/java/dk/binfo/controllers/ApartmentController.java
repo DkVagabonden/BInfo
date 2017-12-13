@@ -18,11 +18,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import javax.validation.Valid;
 
-@Controller // This means that this class is a Controller
+@Controller
 public class ApartmentController {
 
     @Autowired
-    private ApartmentRepository repository; // Kan vi fjerne den en af de to ApartmentRepository for at implementere Autowired?
+    private ApartmentRepository repository;
 
     @Autowired
     private UserService userService;
@@ -30,8 +30,7 @@ public class ApartmentController {
     @Autowired
     private ApartmentService apartmentService;
 
-    @RequestMapping("/apartment") // This means URL's start with /demo (after Application path) TODO Forvirrende
-    // TODO kommentar her!!!
+    @RequestMapping("/apartment")
     public ModelAndView showApartment() {
         ModelAndView modelAndView = new ModelAndView("/apartment", "apartment", repository.findAll());
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -94,7 +93,6 @@ public class ApartmentController {
         {
             modelAndView.setViewName("/apartment/edit");
         }
-
         modelAndView.setViewName("redirect:/apartment");
         apartmentService.update(apartment);
         return modelAndView;
@@ -108,7 +106,3 @@ public class ApartmentController {
     }
 
 }
-
-/*
-Now the final piece of code is to write a controller that retrieves all entities and returns a ModelAndView to render those superheroes (and villains):
- */

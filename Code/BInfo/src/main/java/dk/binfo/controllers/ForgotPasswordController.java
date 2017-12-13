@@ -5,13 +5,14 @@ import dk.binfo.repositories.UserRepository;
 import dk.binfo.services.EmailService;
 import dk.binfo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 
 @Controller
 public class ForgotPasswordController {
@@ -102,8 +103,4 @@ public class ForgotPasswordController {
         body += "2312 nørrebro";
         emailService.generateAndSendEmail(user.getEmail(),"BoligInfo password reset",body);
     }
-
-
-
-
 }
