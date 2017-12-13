@@ -109,6 +109,7 @@ public class PDFController {
         System.out.println("\n* Generating onscreen messages *\n");
         modelAndView.addObject("adminMessage","Du er logget ind som spadmin");
         modelAndView.addObject("PDFMessage","PDF er gemt på /Users/jensbackvall/Desktop/PDF_TEST/");
+        modelAndView.addObject("HeaderMessage","Viser Liste for Lejlighed nr. " + id);
         modelAndView.addObject(user);
         return modelAndView;
     }

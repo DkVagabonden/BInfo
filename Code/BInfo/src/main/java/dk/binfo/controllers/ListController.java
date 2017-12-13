@@ -82,6 +82,7 @@ public class ListController {
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject(user);
         modelAndView.addObject("adminMessage","Du er logget ind som spadmin");
+        modelAndView.addObject("HeaderMessage","Viser Liste for Lejlighed nr. " + id);
         modelAndView.setViewName("/lists/listapartment");
         return modelAndView;
     }
