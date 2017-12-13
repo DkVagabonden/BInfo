@@ -52,16 +52,16 @@ public class User {
 	@Column(name ="phone_number")
 	private String phoneNumber;
 
-	public String getMyApartment() {
+	@Column(name = "my_apartment")
+	private int myApartment;
+
+	public int getMyApartment() {
 		return myApartment;
 	}
 
-	public void setMyApartment(String myApartment) {
+	public void setMyApartment(int myApartment) {
 		this.myApartment = myApartment;
 	}
-
-	@Column(name = "my_apartment")
-	private String myApartment;
 
 	public String getPhoneNumber() {
 		return phoneNumber;

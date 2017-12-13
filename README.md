@@ -42,11 +42,14 @@ Launch tomcat and go to Localhost:8080
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/dkvagabonden/blogv2/tags). 
+We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
 * **Patrick Klæbel** - *Initial work* - [Vagabonden](https://github.com/dkvagabonden)
+* **Steen Petersen** - *Initial work* - [DjStonie](https://github.com/DjStonie)
+* **Jens Backvall** - *Initial work* - [JensBackvall](https://github.com/jensbackvall)
+* **Morten Gert** - *Initial work* - [MortenGert](https://github.com/MortenGert)
 
 See also the list of [contributors](https://github.com/dkvagabonden/blogv2/contributors) who participated in this project.
 

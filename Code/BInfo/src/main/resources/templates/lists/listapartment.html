@@ -16,7 +16,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                KUN ÉN LEJLIGHED
+                <p th:utext="${HeaderMessage}"/>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -29,56 +29,9 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box box-primary">
-                        <!-- Tilpas de nedenstående boxes størrelse, inline -->
-                        <!-- OBS. Hver af de fire første knapper skal angive en prioritet 1, 2, 3 eller 4 som vi
-                        kan sende tilbage til controlleren for at bestemme hvilken arraylist som brugerne
-                        læses fra-->
-                        <div class = "box-header">
-                            <div class="col-sm-2">
-                                <a href="/lists/connect" class="btn btn-success btn-block"
-                                   role="button">
-                                    Sammenlægning</a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="/lists/internal" class="btn btn-success btn-block" role="button">Intern</a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="/lists/family" class="btn btn-success btn-block"
-                                   role="button">Familie</a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="/lists/external" class="btn btn-success btn-block" role="button">Ekstern</a>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="btn-group">
-                                    <button type="button"
-                                            class="btn btn-success btn-block dropdown-toggle"
-                                            data-toggle="dropdown">Én lejlighed
-                                        <span class="caret"></span>
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <!-- Lav form med brugerinput LEJLIGHEDSNUMMER -->
-                                        <li>
-                                            Indtast lejlighed:
-                                        </li>
-                                        <li>
-                                            <form
-                                                    th:action="@{'/lists/listapartment/' + ${id}}"
-                                                  method="post">
-                                                <input type="number" class="form-control"
-                                                       name="id" id="id" th:placeholder="lejlighedsnr.">
-                                            </form>
-                                        </li>
-                                        <!-- Lav button til generering af liste -->
-                                        <li>
-                                            <a th:href="@{'/lists/listapartment/' + ${id}}"
-                                               class="btn btn-success btn-block">Se
-                                                Liste</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="box-header">
+                            <a href="/apartment" class="btn btn-block btn-success" role="button">Tilbage til
+                                lejligheder</a>
                         </div>
 
                         <!-- /.box-header -->
@@ -123,6 +76,7 @@
                 <!-- /.col -->
             </div>
             <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
+            <p class="admin-message-text text-center" th:utext="${PDFMessage}"></p>
             <!-- /.row -->
         </section>
         <!-- /.content -->

@@ -40,6 +40,7 @@
                 <thead>
                 <tr>
                   <th>#</th>
+                  <th>Nummer</th>
                   <th>Addresse</th>
                   <th>Nummer</th>
                   <th>Kvm</th>
@@ -53,6 +54,7 @@
                 <tbody>
                 <tr th:each="apartment, status : ${apartment}">
                   <td th:text="${status.count}">1</td>
+                  <td th:text="${apartment.id}">id</td>
                   <td th:text="${apartment.address}">Address</td>
                   <td th:text="${apartment.number}">number</td>
                   <td th:text="${apartment.size}">size</td>
@@ -65,17 +67,19 @@
                   <td th:text="${apartment.rooms}">rooms</td>
                   <td>
                     <div class="btn-group">
-                      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Redigering
+                      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Valgmuligheder
                         <span class="caret"></span>
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <ul class="dropdown-menu" role="menu">
                         <li><a th:href="@{'apartment/edit/' + ${apartment.id}}">Rediger</a></li>
-                        <li><a th:href="@{'apartment/delete/' + ${apartment.id}}" onclick="return confirm('Er du sikker?')">Slet</a></li>
+                        <li><a th:href="@{'apartment/delete/' + ${apartment.id}}" onclick="return
+                        confirm('Er du sikker på at du vil slette lejligheden?')">Slet</a></li>
                         <li><a th:href="@{'lists/listapartment/' + ${apartment.id}}">Se venteliste</a></li>
-                        <li><a href="http://lmgtfy.com/?q=jeg+har+ingen+ide">Jeg har ingen ide</a></li>
+                        <li><a th:href="@{'lists/listapartmentPDF/' + ${apartment.id}}">Venteliste PDF</a></li>
+                        <!-- <li><a href="http://lmgtfy.com/?q=jeg+har+ingen+ide">Jeg har ingen ide</a></li>
                         <li class="divider"></li>
-                        <li><a href="https://www.youtube.com/watch?v=8gyLR4NfMiI">Look at me now</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=8gyLR4NfMiI">Look at me now</a></li> -->
                       </ul>
                     </div>
                   </td>
@@ -83,15 +87,16 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>#</th>
-                  <th>Addresse</th>
-                  <th>Nummer</th>
-                  <th>Kvm</th>
-                  <th>Etage</th>
-                  <th>Etager</th>
-                  <th>Have j/n</th>
-                  <th>Værelser</th>
-                  <th></th>
+                    <th>#</th>
+                    <th>Nummer</th>
+                    <th>Addresse</th>
+                    <th>Nummer</th>
+                    <th>Kvm</th>
+                    <th>Etage</th>
+                    <th>Etager</th>
+                    <th>Have j/n</th>
+                    <th>Værelser</th>
+                    <th></th>
                 </tr>
                 </tfoot>
               </table>
