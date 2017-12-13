@@ -50,12 +50,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SecurityConfiguration.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/configurations/SecurityConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-77">
+              <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ForgotPasswordController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ForgotPasswordController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="460">
+              <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,17 +116,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/accessDenied.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-155">
-              <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+              <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/edit.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+              <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -136,25 +148,6 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Waitinglist.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/services/Waitinglist.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding>
-                <marker date="1512581230999" expanded="true" signature="2356:2421" ph="SELECT neigh... apartment_neighbours" />
-                <marker date="1512581230999" expanded="true" signature="2903:2948" ph="SELECT email... user" />
-                <marker date="1512581230999" expanded="true" signature="3329:3381" ph="SELECT email... list_and_seniority" />
-                <marker date="1512581230999" expanded="true" signature="4740:4797" ph="SELECT email... user_preferences" />
-                <marker date="1512581230999" expanded="true" signature="5886:5938" ph="SELECT email... list_and_seniority" />
-                <marker date="1512581230999" expanded="true" signature="6601:6653" ph="SELECT email... list_and_seniority" />
-                <marker date="1512581230999" expanded="true" signature="7278:7330" ph="SELECT email... list_and_seniority" />
-                <marker date="1512581230999" expanded="true" signature="8693:8787" ph="SELECT email... list_and_seniority" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -235,10 +228,10 @@
         <option value="$PROJECT_DIR$/src/main/java/dk/binfo/models/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ApartmentController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/layout.html" />
-        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/configurations/SecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/AccessDeniedController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ForgotPasswordController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/lists/connect.html" />
+        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ForgotPasswordController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dk/binfo/configurations/SecurityConfiguration.java" />
       </list>
     </option>
   </component>
@@ -571,12 +564,12 @@
       <workItem from="1512640313106" duration="23000" />
       <workItem from="1512640368808" duration="12093000" />
       <workItem from="1513094651386" duration="1532000" />
-      <workItem from="1513186035571" duration="1915000" />
+      <workItem from="1513186035571" duration="2209000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190660000" />
+    <option name="totallyTimeSpent" value="190954000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -766,10 +759,10 @@
         <state relative-caret-position="85">
           <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
           <folding>
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="false" />
+            <element signature="e#741#742#0" expanded="false" />
+            <element signature="e#1050#1051#0" expanded="false" />
+            <element signature="e#1102#1103#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -835,7 +828,7 @@
         <state relative-caret-position="475">
           <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -845,7 +838,7 @@
         <state relative-caret-position="187">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -887,16 +880,6 @@
         <state relative-caret-position="272">
           <caret line="121" column="39" lean-forward="true" selection-start-line="121" selection-start-column="39" selection-end-line="121" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/configurations/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -953,7 +936,7 @@
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -974,27 +957,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ForgotPasswordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/services/Waitinglist.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="68">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
-            <marker date="1512581230999" expanded="true" signature="2356:2421" ph="SELECT neigh... apartment_neighbours" />
-            <marker date="1512581230999" expanded="true" signature="2903:2948" ph="SELECT email... user" />
-            <marker date="1512581230999" expanded="true" signature="3329:3381" ph="SELECT email... list_and_seniority" />
-            <marker date="1512581230999" expanded="true" signature="4740:4797" ph="SELECT email... user_preferences" />
-            <marker date="1512581230999" expanded="true" signature="5886:5938" ph="SELECT email... list_and_seniority" />
-            <marker date="1512581230999" expanded="true" signature="6601:6653" ph="SELECT email... list_and_seniority" />
-            <marker date="1512581230999" expanded="true" signature="7278:7330" ph="SELECT email... list_and_seniority" />
-            <marker date="1512581230999" expanded="true" signature="8693:8787" ph="SELECT email... list_and_seniority" />
+            <marker date="1513191420374" expanded="true" signature="8364:8390" ph="{...}" />
+            <marker date="1513191420374" expanded="true" signature="8843:9439" ph="{...}" />
+            <marker date="1513191420374" expanded="true" signature="9054:9148" ph="SELECT email... list_and_seniority" />
           </folding>
         </state>
       </provider>
@@ -1050,7 +1020,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/accessDenied.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-155">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1058,7 +1028,25 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/controllers/ForgotPasswordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dk/binfo/configurations/SecurityConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
           <folding />
         </state>
       </provider>

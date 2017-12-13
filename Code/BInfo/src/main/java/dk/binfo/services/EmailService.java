@@ -25,11 +25,9 @@ public class EmailService {
      * @param To The email we should send to
      * @param Subject The subject of the email
      * @param Body The body of the email, you can use html tags like <br>
-     * @param user The username used to login to gmail
-     * @param password The password used to login to gmail
      * @author Stonie
      */
-    public void generateAndSendEmail(String To,String Subject,String Body,String user,String password){
+    public void generateAndSendEmail(String To,String Subject,String Body){
     try {
         Properties mailServerProperties;
         Session getMailSession;
@@ -47,7 +45,7 @@ public class EmailService {
         generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(To));
         generateMailMessage.setSubject(Subject);
         String emailBody = Body;
-        generateMailMessage.setContent(emailBody, "text/html");
+        generateMailMessage.setContent(emailBody, "text/html; charset=UTF-8");
 
         // Get Session and Send mail
         Transport transport = getMailSession.getTransport("smtp");
