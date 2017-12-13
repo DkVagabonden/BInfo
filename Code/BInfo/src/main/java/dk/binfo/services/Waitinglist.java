@@ -154,7 +154,8 @@ public class Waitinglist {
 	public ArrayList<String> getPreferences(int length,int ApartmentId){
 		ArrayList<String> pref = new ArrayList<String>();
 		try {
-				PreparedStatement sql = jdbcTemplate.getDataSource().getConnection().prepareStatement("SELECT email FROM `user_preferences` WHERE id_apartment=?;");
+				PreparedStatement sql = jdbcTemplate.getDataSource().getConnection()
+					.prepareStatement("SELECT email FROM `user_preferences` WHERE id_apartment=?;");
 				sql.setInt(1, ApartmentId);
 				ResultSet result = sql.executeQuery();
 				if(!result.next()){
