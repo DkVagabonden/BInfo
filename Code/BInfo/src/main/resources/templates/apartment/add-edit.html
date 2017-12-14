@@ -46,7 +46,7 @@ xmlns:th="http://www.thymeleaf.org">
 						<div class="form-group">
 							<label for="number" class="col-sm-2 control-label">Vejnummer</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="number" th:value="*{number}" th:field="*{number}" required="" type="number" placeholder="Lejligheds nummer" onkeydown="return event.keyCode == 69 || event.keyCode == 187 || event.keyCode == 188 || event.keyCode == 189 || event.keyCode == 190 	 ? false : true" >
+								<input type="text" class="form-control" id="number" th:value="*{number}" th:field="*{number}" required="" type="text" placeholder="Lejligheds nummer" >
 								<label th:if="${#fields.hasErrors('number')}" th:errors="*{number}" class="validation-message"></label>
 							</div>
 						</div>
@@ -102,7 +102,7 @@ xmlns:th="http://www.thymeleaf.org">
 					<div class="box-footer">
 						<button type="reset" class="btn btn-default"><a onclick="return confirm('Er de sikker?')">Reset
 						</a></button>
-						<button type="Edit"  value ="Edit" class="btn btn-info pull-right"><a onclick="return confirm('Er de indtastede oplysninger korrekte?')">Tilføj</a></button> // TODO Hvis vi fortsat skal have denn pop-up, så skal værdien for de felter som er ændret vises i den.
+						<button type="Edit"  value ="Edit" class="btn btn-info pull-right"><a onclick="return confirm('Er de indtastede oplysninger korrekte?')">Tilføj</a></button>
 					</div>
 					<!-- /.box-footer -->
 				</form>
