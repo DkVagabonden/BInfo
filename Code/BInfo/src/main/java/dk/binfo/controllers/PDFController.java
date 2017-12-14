@@ -18,7 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 
-
+/**
+ *  @author Jens Bäckvall
+ *  @author Steen Petersen
+ */
 @Controller
 public class PDFController {
 
