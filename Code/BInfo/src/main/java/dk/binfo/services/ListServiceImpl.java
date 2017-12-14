@@ -98,8 +98,6 @@ public class ListServiceImpl implements ListService {
             User listUser = userService.findUserByEmail(email);
             generatedList.add(listUser);
         }
-        System.out.println("Printing from generatedList in ListServiceImpl.java");
-        System.out.println(generatedList);
         return generatedList;
     }
 
@@ -128,8 +126,6 @@ public class ListServiceImpl implements ListService {
             User listUser = userService.findUserByEmail(email);
             generatedApartmentList.add(listUser);
         }
-        System.out.println("Printing from generatedApartmentList in ListServiceImpl.java");
-        System.out.println(generatedApartmentList);
         return generatedApartmentList;
     }
 
@@ -145,7 +141,6 @@ public class ListServiceImpl implements ListService {
             theList.add(h);
 
             for (String email: emailList) {
-                System.out.println("Finding info for user with email: " + email);
                 User listUser = userService.findUserByEmail(email);
                 Paragraph p = new Paragraph();
                 Chunk seniority = new Chunk("\nAncienittet: " + (emailList.indexOf(email) + 1) + "\n", theFont);
@@ -165,8 +160,6 @@ public class ListServiceImpl implements ListService {
             }
 
             theList.close();
-
-            System.out.println("\n* LIST PDF GENERATED! *\n");
 
         } catch (FileNotFoundException | DocumentException e) {
             e.printStackTrace();

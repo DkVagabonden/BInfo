@@ -170,7 +170,6 @@
         <strong>Copyright &copy; 2017 <a href="#">BoligInfo</a>.</strong> All rights reserved For Über Alles Mig.
 
     <!-- REQUIRED JS SCRIPTS -->
-
     <!-- jQuery 3 -->
     <script src="/js/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
@@ -189,22 +188,3 @@
 </footer>
 </body>
 </html>
-
-
-<!-- The above file “layout.html” holds several Thymeleaf fragments that will be included in all site pages:
-The “site-head” fragment holds the <head> section. It includes the site CSS, JavaScript code, etc.
-It appends to the page <head> section the <head> section of the invoking page, e.g. index.html.
-The “site-header” fragment holds the site header: site logo + top navigation links to the other site pages. It also holds the “Logout” forms.
-The header now holds links to all pages, but once the login / logout functionality is implemented,
-it will show / hide some of the links for anonymous site visitors and for the authenticated users.
-The “site-footer” fragment is very simple. It holds some static text for the site footer.
-Note that the links in the above code look like duplicated, because there are two attributes that specify the resource address: href=”…” and th:href=”…”.
-This is because Thymeleaf uses natural templates.
-“Natural templates” means that the template is a document as valid as the final result and the view engine syntax doesn’t break the document’s structure.
-The href value specifies the relative resource location in the system (provided by the Web site designer, e.g. “../public/css/styles.css“).
-The th:href value specifies the resource runtime location at the Web server (which is relative to the site root, e.g. “/css/styles.css“).
-
-The code to show the notification messages is complex to be explained, but in brief: it iterates over the list of notification messages, displays each message in a <li> and finally removes all messages from the HTTP session.
-
-
- -->
