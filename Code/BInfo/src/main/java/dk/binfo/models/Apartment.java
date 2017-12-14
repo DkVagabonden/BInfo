@@ -100,11 +100,3 @@ public class Apartment {
     }
 }
 
-
-/*
-At first sight this class is a simple POJO with some fields and getters/setters for every field except for the ID. We don’t want people to allow updating the ID, so if you leave out the setter, there is no way you can edit the field. Obviously for instantiation you’ll have to find another mechanism, being either a builder or a constructor with the possibility to add the ID. Or in this case we have an auto-generated ID, so in theory you don’t need any way to set the field, though for testing you still might want to keep a constructor or a builder.
-
-Anyways, next to the fields themselves there are also some JPA annotations. Above the class we can find two of them, called @Entity and @Table. With the first annotation we tell JPA that this class is an entity, while with the second one you tell which table it resembles. If the table name is the same as the class name, you could leave this one away.
-
-Now, for each field we have the @Column annotation to tell what column the field resembles. For the ID we also have the @Id annotation and the @GeneratedValue annotation which tells JPA how the ID is created.
- */
