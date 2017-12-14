@@ -37,16 +37,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		
-		http.
-			authorizeRequests()
-				.antMatchers("/").permitAll()
-				.antMatchers("/login").permitAll()
-				.antMatchers("/forgotpassword").permitAll()
-				.antMatchers("/apartment/**").hasAuthority("ADMIN")
-				.antMatchers("/users/**").hasAuthority("ADMIN")
-				.antMatchers("/registration").permitAll()
-				.antMatchers("/error").permitAll()
+
+		http.authorizeRequests()
+				.antMatchers("/", "/login", "/forgotpassword/**", "/registration", "/error").permitAll()
+				.antMatchers("/apartment/**", "/users/**").hasAuthority("ADMIN")
+				.anyRequest().authenticated().and().csrf().disable().formLogin()
+				.loginPage("/login").failureUrl("/login?error=true").permitAll()
+				.defaultSuccessUrl("/home")
+				.usernameParameter("email").passwordParameter("password")
+				.and().rememberMe().key("rem-me-key").rememberMeParameter("remember-me").rememberMeCookieName("remember-me")
+				.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login")
+				.and().exceptionHandling().accessDeniedHandler(accessDeniedHandler());
 				// TODO admin skal kunne se alle ventelister (/admin/list/Family/intern/ekstern/connectMrawesomeSexy)
 				// TODO lave en SQL side hvor admin kan se hvornår en bruger loggede sidst ind og deres IP. -- skip for nu
 				// TODO lave så admin kan godkende nyopskrevet brugere.
@@ -66,19 +67,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				// TODO Lav javadoc på alle classer, methoder og atributer
 				// TODO lav admin bruger indstillinger (/admin/settings Controller + html) - MORTEN - DONE
 				// TODO Lav javadoc på alle classer, methoder og
-				// attributer
-				.antMatchers("/user/**").hasAuthority("user") //TODO lav en user adminHome side (Controller, html)
-				.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
-				.authenticated().and().csrf().disable().formLogin()
-				.loginPage("/login").failureUrl("/login?error=true")
-				.defaultSuccessUrl("/home") //TODO Ændre til en user homepage. Og lav en userpage.
-				.usernameParameter("email")
-				.passwordParameter("password")
-				.and().rememberMe().key("rem-me-key").rememberMeParameter("remember-me").rememberMeCookieName("remember-me") // TODO Check om der er sikkershedsproblemer
-				.and().logout()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.logoutSuccessUrl("/login")
-				.and().exceptionHandling().accessDeniedHandler(accessDeniedHandler());
+		
 	}
 	
 	@Override
@@ -97,32 +86,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		return new CustomAccessDeniedHandler();
 	}
 
-	@Bean
+	@Bean //TODO CHECK DENNE
 	public SpringTemplateEngine templateEngine(ITemplateResolver templateResolver, SpringSecurityDialect sec) {
 		final SpringTemplateEngine templateEngine = new SpringTemplateEngine();
 		templateEngine.setTemplateResolver(templateResolver);
-		templateEngine.addDialect(sec); // Enable use of "sec"
+		templateEngine.addDialect(sec);
 		return templateEngine;
 	}
 
 }
 
-/*
-This class is where the security logic is implemented, let´s analyze the code.
-Line 21 → password encoder reference implemented in WebMvcConfig.java
-Line 24 → data source implemented out of the box by Spring Boot. We only need to provide the database information in the application.properties file (please see the reference below).
-Lines 27 and 30 → Reference to user and role queries stored in application.properties file (please see the reference below).
-Lines from 33 to 41 → AuthenticationManagerBuilder provides a mechanism to get a user based on the password encoder, data source, user query and role query.
-Lines from 44 to 61 → Here we define the antMatchers to provide access based on the role(s) (lines 48 to 51), the parameters for the login process (lines 55 to 56), the success login page(line 53), the failure login page(line 53), and the logout page (line 58).
-Lines from 64 to 68 → Due we have implemented Spring Security we need to let Spring knows that our resources folder can be served skipping the antMatchers defined.
- */
 
-
-
-/* The WebSecurityConfig class is annotated with @EnableWebSecurity to enable Spring Security’s web security support and provide the Spring MVC integration. It also extends WebSecurityConfigurerAdapter and overrides a couple of its methods to set some specifics of the web security configuration.
-
-The configure(HttpSecurity) method defines which URL paths should be secured and which should not. Specifically, the "/" and "/adminHome" paths are configured to not require any authentication. All other paths must be authenticated.
-
-When a user successfully logs in, they will be redirected to the previously requested page that required authentication. There is a custom "/login" page specified by loginPage(), and everyone is allowed to view it.
-
-As for the configureGlobal(AuthenticationManagerBuilder) method, it sets up an in-memory user store with a single user. That user is given a username of "user", a password of "password", and a role of "USER". */
+// As for the configureGlobal(AuthenticationManagerBuilder) method, it sets up an in-memory user store with a single user. That user is given a username of "user", a password of "password", and a role of "USER". */ //TODO PATRICK

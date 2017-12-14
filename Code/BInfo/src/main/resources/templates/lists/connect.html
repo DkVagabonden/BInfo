@@ -29,10 +29,6 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box box-primary">
-                        <!-- Tilpas de nedenstående boxes størrelse, inline -->
-                        <!-- OBS. Hver af de fire første knapper skal angive en prioritet 1, 2, 3 eller 4 som vi
-                        kan sende tilbage til controlleren for at bestemme hvilken arraylist som brugerne
-                        læses fra-->
                         <div class = "box-header">
                             <div class="col-sm-2">
                                 <a href="/lists/connect" class="btn btn-success btn-block"
@@ -70,7 +66,6 @@
                                                        name="id" id="id" th:placeholder="lejlighedsnr.">
                                             </form>
                                         </li>
-                                        <!-- Lav button til generering af liste -->
                                         <li>
                                             <a th:href="@{'/lists/listapartment/' + ${id}}"
                                                class="btn btn-success btn-block">Se
@@ -78,6 +73,10 @@
                                         </li>
                                     </ul>
                                 </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="/lists/connect/pdf" class="btn btn-success btn-block"
+                                   role="button">PDF fra liste</a>
                             </div>
                         </div>
 
@@ -124,6 +123,7 @@
                 <!-- /.col -->
             </div>
             <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
+            <p class="admin-message-text text-center" th:utext="${PDFMessage}"></p>
             <!-- /.row -->
         </section>
         <!-- /.content -->

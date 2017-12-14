@@ -3,10 +3,10 @@ package dk.binfo.services;
 import dk.binfo.models.Apartment;
 
 import java.util.List;
-
+/**
+ * @author Vagabonden
+ */
 public interface ApartmentService {
-    Apartment findApartmentByNumber(String number);
-
     Apartment delete(int id);
     List<Apartment> findAll();
     Apartment update(Apartment apartment);
