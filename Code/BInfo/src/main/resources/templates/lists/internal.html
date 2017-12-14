@@ -63,13 +63,9 @@
                                             Indtast lejlighed:
                                         </li>
                                         <li>
-                                            <form
-                                                    th:value="${id}" th:field="${id}"
-                                                    method="get">
-                                                <input type="number" class="form-control"
-                                                       th:name="id" th:placeholder="lejlighedsnr.">
-                                                <a th:href="@{'/lists/listapartment/' + ${id}}"
-                                                        class="btn btn-success btn-block">Se Liste</a>
+                                            <form th:value="${id}" th:field="${id}" method="get">
+                                                <input type="number" class="form-control" th:name="id" th:placeholder="lejlighedsnr.">
+                                                <a th:href="@{'/lists/listapartment/' + ${id}}" class="btn btn-success btn-block">Se Liste</a>
 
                                             </form>
                                         </li>

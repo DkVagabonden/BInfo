@@ -66,8 +66,7 @@ public class ListController {
 
     @RequestMapping(value={"/lists/external"})
     public ModelAndView showExternalList() {
-        ModelAndView modelAndView = new ModelAndView("/lists/external", "list", listService
-                .generateList(Integer.MAX_VALUE, 4));
+        ModelAndView modelAndView = new ModelAndView("/lists/external", "list", listService.generateList(Integer.MAX_VALUE, 4));
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject(user);
@@ -77,12 +76,11 @@ public class ListController {
 
     @RequestMapping(value={"/lists/listapartment/{id}"}, method = RequestMethod.GET)
     public ModelAndView showSingleApartmentList(@PathVariable("id") Integer id) {
-        ModelAndView modelAndView = new ModelAndView("/lists/listapartment", "list",
-                listService.generateSingleApartmentList(Integer.MAX_VALUE, id));
+        ModelAndView modelAndView = new ModelAndView("/lists/listapartment", "list", listService.generateSingleApartmentList(Integer.MAX_VALUE, id));
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject(user);
-        modelAndView.addObject("adminMessage","Du er logget ind som spadmin");
+        modelAndView.addObject("adminMessage","Du er logget ind som admin");
         modelAndView.addObject("HeaderMessage","Viser Liste for Lejlighed nr. " + id);
         modelAndView.setViewName("/lists/listapartment");
         return modelAndView;

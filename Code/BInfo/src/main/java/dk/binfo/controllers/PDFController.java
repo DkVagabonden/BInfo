@@ -75,8 +75,7 @@ public class PDFController {
 
     @RequestMapping(value={"/lists/external/pdf"})
     public ModelAndView generateExternalListPDF() {
-        ModelAndView modelAndView = new ModelAndView("/lists/external", "list", listService
-                .generateList(Integer.MAX_VALUE, 4));
+        ModelAndView modelAndView = new ModelAndView("/lists/external", "list", listService.generateList(Integer.MAX_VALUE, 4));
         String filePath = "/Users/jensbackvall/Desktop/PDF_TEST/Ekstern_liste.pdf"; // filePath
         listService.generateCompleteListPDF(Integer.MAX_VALUE, 4, filePath);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -89,8 +88,7 @@ public class PDFController {
 
     @RequestMapping(value={"/lists/listapartmentPDF/{id}"}, method = RequestMethod.GET)
     public ModelAndView showSingleApartmentList(@PathVariable("id") Integer id) {
-        ModelAndView modelAndView = new ModelAndView("/lists/listapartment", "list",
-                listService.generateSingleApartmentList(Integer.MAX_VALUE, id));
+        ModelAndView modelAndView = new ModelAndView("/lists/listapartment", "list", listService.generateSingleApartmentList(Integer.MAX_VALUE, id));
         String filePath = "/Users/jensbackvall/Desktop/PDF_TEST/Liste_for_lejlighed_" + id + ".pdf"; // filePath
         listService.generateSingleApartmentPDF(Integer.MAX_VALUE, id, filePath);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
