@@ -12,7 +12,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.springframework.data.annotation.Transient;
-
+/**
+ *  @author Patrick Klæbel
+ *  @author Jens Bäckvall
+ *  @author Steen Petersen
+ *  @author Morten Olsen
+ *
+ */
 @Entity
 @Table(name = "user")
 public class User {

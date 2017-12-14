@@ -16,8 +16,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
 /**
- * @author Vagabonden
+ *  @author Patrick Klæbel
+ *  @author Jens Bäckvall
+ *  @author Steen Petersen
+ *  @author Morten Olsen
+ *
  */
 @Service("userService")
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -65,7 +70,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	@Transactional
 	public User update(User user){
 		User updatedUser = userRepository.findByEmail(user.getEmail());
-
 		updatedUser.setName(user.getName());
 		updatedUser.setLastName(user.getLastName());
 		updatedUser.setPhoneNumber(user.getPhoneNumber());
@@ -78,9 +82,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	public void adminRegisterUser(User user) {
 		Random ran = new Random();
 		String Password = generateString(ran,"qwertyuiopasdfghjklzxcvbnm",8);
-		System.out.println(Password);
 		user.setPassword(bCryptPasswordEncoder.encode(Password));
-		System.out.println(user.getPassword());
 		user.setActive(user.isActive());
 		user.setPhoneNumber(user.getPhoneNumber());
 		Role userRole = roleRepository.findByRole("user");
@@ -92,21 +94,13 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	@Transactional
 	public User updateUserSettings(User user){
 		User updateUser = userRepository.findByEmail(user.getEmail());
-		System.out.println(user.getPassword());
-		System.out.println(user.getPhoneNumber());
-		if(user.getPassword().equalsIgnoreCase("") && user.getPhoneNumber() != null)
-		{
-			System.out.println(user.getPhoneNumber()); //TODO fjern
+		if(user.getPassword().equalsIgnoreCase("") && user.getPhoneNumber() != null) {
 			updateUser.setPhoneNumber(user.getPhoneNumber());
 		}
 		if(user.getPhoneNumber() == null || user.getPhoneNumber().equalsIgnoreCase("") && user.getPassword() != null) {
-			System.out.println(user.getPassword()); //TODO fjern
 			updateUser.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		}
 		if(user.getPhoneNumber() != null && user.getPassword() != null) {
-
-			System.out.println(user.getPassword()); //TODO fjern
-			System.out.println(user.getPhoneNumber()); //TODO fjern
 			updateUser.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 			updateUser.setPhoneNumber(user.getPhoneNumber());
 		}

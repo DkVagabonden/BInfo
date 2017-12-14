@@ -4,7 +4,11 @@ import dk.binfo.models.Apartment;
 
 import java.util.List;
 /**
- * @author Vagabonden
+ *  @author Patrick Klæbel
+ *  @author Jens Bäckvall
+ *  @author Steen Petersen
+ *  @author Morten Olsen
+ *
  */
 public interface ApartmentService {
     Apartment delete(int id);

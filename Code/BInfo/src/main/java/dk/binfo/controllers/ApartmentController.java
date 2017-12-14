@@ -21,6 +21,12 @@ import javax.validation.Valid;
 @Controller
 public class ApartmentController {
 
+    /**
+     *  @author Patrick Klæbel
+     *  @author Steen Petersen
+     *  @author Morten Olsen
+     */
+
     @Autowired
     private ApartmentRepository repository;
 

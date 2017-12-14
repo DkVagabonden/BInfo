@@ -8,7 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 /**
- * @author Vagabonden
+ *  @author Patrick Klæbel
+ *  @author Jens Bäckvall
+ *  @author Steen Petersen
+ *  @author Morten Olsen
+ *
  */
 @Service("apartmentService")
 public class ApartmentImpl implements ApartmentService {
